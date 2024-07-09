@@ -1,25 +1,40 @@
 <template>
   <div>
-    <h1>Song List</h1>
-    <ul>
-      <li v-for="song in songs" :key="song.id">
-        {{ song.name }}
-        <button @click="playSong(song)">Play</button>
-      </li>
-    </ul>
-    <AudioPlayer />
+    <!-- 组件内容 -->
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-import { songs } from '../mock/data';
-import { useStore } from '../store';
-import AudioPlayer from '../components/AudioPlayer.vue';
-
-const store = useStore();
-
-const playSong = (song) => {
-  store.setCurrentSong(song);
+<script>
+export default {
+  data() {
+    return {
+      showDialog: false,
+      message: ''
+    };
+  },
+  methods: {
+    someFunction() {
+      if (!this.showDialog) {
+        this.openDialog("确定要继续连接吗?");
+      }
+    },
+    openDialog(message) {
+      this.message = message;
+      this.showDialog = true;
+    },
+    handleYes() {
+      this.showDialog = false;
+      // 执行“是”的操作
+    },
+    handleNo() {
+      this.showDialog = false;
+      // 执行“否”的操作
+    }
+  }
 };
 </script>
+
+<style scoped>
+.dialog {
+}
+</style>
