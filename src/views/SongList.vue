@@ -13,6 +13,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useStore } from '../stores/yourStore';
 import { songs } from '../mock/data';
 import { useStore } from '../store';
 import AudioPlayer from '../components/AudioPlayer.vue';
