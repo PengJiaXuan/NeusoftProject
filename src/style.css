@@ -13,7 +13,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--background-dark);
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,8 +31,12 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center; /* 中心对齐 */
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-dark);
+  color: rgba(255, 255, 255, 0.87);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -62,7 +65,7 @@ button:focus-visible {
 
 .card {
   padding: 2em;
-  flex-grow: 1; /* 弹性布局优化 */
+  flex-grow: 1;
 }
 
 #app {
@@ -70,6 +73,52 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.control-button {
+  padding: 1rem;
+  background-color: var(--button-background-dark);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.control-button:hover {
+  background-color: var(--hover-color);
+}
+
+.track-info {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .player-controls {
+    gap: 2rem;
+  }
+
+  .control-button {
+    padding: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .track-info {
+    font-size: 1.5rem;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -84,5 +133,3 @@ button:focus-visible {
     background-color: var(--button-background-light);
   }
 }
-
-/* 建议在HTML中为按钮添加适当的aria-label，例如 <button aria-label="Submit">Submit</button> */
