@@ -17,6 +17,7 @@
           <span class="track-duration">{{ song.duration }}</span>
         </li>
       </ul>
+      <audio ref="audioPlayer" class="audio-player"></audio>
     </div>
   </div>
 </template>
@@ -24,7 +25,6 @@
 <script setup>
 import { ref } from 'vue';
 import { useStore } from '../stores/yourStore';
-import { parseBlob } from 'music-metadata-browser';
 
 const props = defineProps({
   songs: Array
@@ -32,55 +32,13 @@ const props = defineProps({
 
 const store = useStore();
 const audioPlayer = ref(null);
-const currentCover = ref(null);
 
-const playSong = async (song) => {
-  try {
-    store.setCurrentSong(song);
-    if (audioPlayer.value) {
-      audioPlayer.value.src = song.url;
-      audioPlayer.value.play();
-      await fetchCover(song.url);
-    }
-  } catch (err) {
-    console.error('Error setting current song:', err);
+const playSong = (song) => {
+  store.setCurrentSong(song);
+  if (audioPlayer.value) {
+    audioPlayer.value.src = song.url;
+    audioPlayer.value.play();
   }
-};
-
-const fetchCover = async (url) => {
-  try {
-    console.log(`Fetching cover for URL: ${url}`);
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const blob = await response.blob();
-    console.log('Blob fetched:', blob);
-    const metadata = await parseBlob(blob);
-    console.log('Metadata parsed:', metadata);
-    const picture = metadata.common.picture && metadata.common.picture[0];
-    if (picture) {
-      const base64String = arrayBufferToBase64(picture.data);
-      currentCover.value = `data:${picture.format};base64,${base64String}`;
-      console.log('Cover extracted:', currentCover.value);
-    } else {
-      currentCover.value = null;
-      console.log('No cover found in metadata');
-    }
-  } catch (error) {
-    console.error('Error reading metadata:', error);
-    currentCover.value = null;
-  }
-};
-
-const arrayBufferToBase64 = (buffer) => {
-  let binary = '';
-  const bytes = new Uint8Array(buffer);
-  const len = bytes.byteLength;
-  for (let i = 0; i < len; i++) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return window.btoa(binary);
 };
 </script>
 
@@ -171,5 +129,9 @@ li:hover {
 
 .track-name {
   font-weight: bold;
+}
+
+.audio-player {
+  display: none;
 }
 </style>
