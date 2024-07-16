@@ -5,16 +5,9 @@
       <audio ref="audioPlayer" controls class="audio-player"></audio>
     </div>
     <div class="right-panel">
-      <div class="disc">光盘: 1</div>
+      <div class="album">专辑: Lagoon West</div>
       <ul>
-        <li v-for="(song, index) in songsDisc1" :key="song.id" @click="playSong(song)">
-          <span>{{ index + 1 }}. {{ song.name }}</span> 
-          <span class="duration">{{ song.duration }}</span>
-        </li>
-      </ul>
-      <div class="disc">光盘: 2</div>
-      <ul>
-        <li v-for="(song, index) in songsDisc2" :key="song.id" @click="playSong(song)">
+        <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song)">
           <span>{{ index + 1 }}. {{ song.name }}</span> 
           <span class="duration">{{ song.duration }}</span>
         </li>
@@ -29,8 +22,7 @@ import { useStore } from '../stores/yourStore';
 import { parseBlob } from 'music-metadata-browser';
 
 const props = defineProps({
-  songsDisc1: Array,
-  songsDisc2: Array
+  songs: Array
 });
 
 const store = useStore();
@@ -124,7 +116,7 @@ const arrayBufferToBase64 = (buffer) => {
   overflow-y: auto;
 }
 
-.disc {
+.album {
   font-size: 1.2em;
   margin: 20px 0 10px;
 }
