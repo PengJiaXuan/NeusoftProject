@@ -1,7 +1,7 @@
 <template>
   <div class="player">
     <div class="left-panel">
-      <img src="public/1.png" alt="Album Cover" class="album-cover">
+      <img src="/1.png" alt="Album Cover" class="album-cover">
       <div class="album-info">
         <h1>Yoga</h1>
         <p>LagoonWest • 1999 • 8首歌曲, 50分钟29秒</p>
