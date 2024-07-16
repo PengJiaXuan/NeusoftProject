@@ -22,7 +22,7 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center; /* 中心对齐 */
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background-dark);
@@ -35,11 +35,6 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 a {
@@ -74,80 +69,45 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--button-background-dark);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  gap: 1rem;
 }
 
-.left-panel,
-.right-panel {
+.player-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.left-panel {
-  margin-bottom: 1rem;
+.control-button {
+  padding: 1rem;
+  background-color: var(--button-background-dark);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.album-cover {
-  max-width: 100%;
-  max-height: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.audio-player {
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 600px;
+.control-button:hover {
+  background-color: var(--hover-color);
 }
 
 .track-info {
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: var(--button-background-light);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-li:hover {
-  background-color: var(--hover-color);
-  color: var(--background-light);
-}
-
-.duration {
-  font-size: 0.9em;
-  color: #666;
 }
 
 @media (min-width: 768px) {
-  .music-player {
-    flex-direction: row;
+  .player-controls {
     gap: 2rem;
   }
 
-  .left-panel,
-  .right-panel {
-    width: 50%;
+  .control-button {
+    padding: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .track-info {
+    font-size: 1.5rem;
   }
 }
 
@@ -161,13 +121,5 @@ li:hover {
   }
   button[aria-label] {
     background-color: var(--button-background-light);
-  }
-  li {
-    background-color: var(--button-background-dark);
-    color: rgba(255, 255, 255, 0.87);
-  }
-  li:hover {
-    background-color: var(--hover-color);
-    color: var(--background-light);
   }
 }

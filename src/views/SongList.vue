@@ -1,15 +1,20 @@
 <template>
   <div class="player">
     <div class="left-panel">
-      <img :src="currentCover" alt="Album Cover" class="album-cover" v-if="currentCover">
-      <audio ref="audioPlayer" controls class="audio-player"></audio>
+      <img src="public/1.png" alt="Album Cover" class="album-cover">
+      <div class="album-info">
+        <h1>Yoga</h1>
+        <p>LagoonWest • 1999 • 8首歌曲, 50分钟29秒</p>
+      </div>
     </div>
     <div class="right-panel">
       <div class="album">专辑: Lagoon West</div>
       <ul>
         <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song)">
-          <span>{{ index + 1 }}. {{ song.name }}</span> 
-          <span class="duration">{{ song.duration }}</span>
+          <span class="track-number">{{ index + 1 }}</span>
+          <span class="track-name">{{ song.name }}</span>
+          <span class="track-artist">LagoonWest</span>
+          <span class="track-duration">{{ song.duration }}</span>
         </li>
       </ul>
     </div>
@@ -79,46 +84,57 @@ const arrayBufferToBase64 = (buffer) => {
 };
 </script>
 
-<style>
+<style scoped>
 .player {
   display: flex;
-  background-color: var(--background-dark);
-  color: rgba(255, 255, 255, 0.87);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--button-background-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .left-panel {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .album-cover {
   max-width: 100%;
-  max-height: 70%;
+  max-height: 300px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.audio-player {
-  margin-top: 20px;
-  width: 100%;
+.album-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.album-info h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.album-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .right-panel {
-  flex: 2;
-  padding: 20px;
-  overflow-y: auto;
+  width: 100%;
 }
 
 .album {
   font-size: 1.2em;
   margin: 20px 0 10px;
+  text-align: left;
 }
 
 ul {
@@ -127,20 +143,33 @@ ul {
 }
 
 li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr 1fr;
+  gap: 10px;
   align-items: center;
   padding: 10px;
+  margin: 5px 0;
+  background-color: var(--button-background-light);
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 li:hover {
-  background-color: var(--button-background-dark);
+  background-color: var(--hover-color);
+  color: var(--background-light);
 }
 
-.duration {
-  font-size: 0.9em;
-  color: #ccc;
+.track-number, .track-name, .track-artist, .track-duration {
+  text-align: left;
+}
+
+.track-number, .track-duration {
+  text-align: center;
+  color: #666;
+}
+
+.track-name {
+  font-weight: bold;
 }
 </style>
