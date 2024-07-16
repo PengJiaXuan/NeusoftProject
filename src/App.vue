@@ -1,20 +1,16 @@
 <template>
   <div id="App">
-    <SongList :songs="songs" />
+    <SongList :songsDisc1="songsDisc1" :songsDisc2="songsDisc2" />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import SongList from './views/SongList.vue';
+import { songsDisc1, songsDisc2 } from './mock/data';
 
-// 初始化变量
-const songs = ref([
-  { id: 1, name: 'Alivvve - All We Have', url: 'public/Alivvve - All We Have.mp3' },
-  { id: 2, name: 'Bubble Tea and Cigarettes - Room 907', url: 'public/Bubble Tea and Cigarettes - Room 907.mp3' },
-  { id: 3, name: 'hozuki - snowfield', url: 'public/hozuki - snowfield.mp3' },
-]);
-
+const songsDisc1Ref = ref(songsDisc1);
+const songsDisc2Ref = ref(songsDisc2);
 </script>
 
 <style>
@@ -47,4 +43,3 @@ const songs = ref([
   margin-top: 20px;
 }
 </style>
-

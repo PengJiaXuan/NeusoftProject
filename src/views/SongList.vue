@@ -7,14 +7,14 @@
     <div class="right-panel">
       <div class="disc">光盘: 1</div>
       <ul>
-        <li v-for="(song, index) in songsDisc1Ref" :key="song.id" @click="playSong(song)">
+        <li v-for="(song, index) in songsDisc1" :key="song.id" @click="playSong(song)">
           <span>{{ index + 1 }}. {{ song.name }}</span> 
           <span class="duration">{{ song.duration }}</span>
         </li>
       </ul>
       <div class="disc">光盘: 2</div>
       <ul>
-        <li v-for="(song, index) in songsDisc2Ref" :key="song.id" @click="playSong(song)">
+        <li v-for="(song, index) in songsDisc2" :key="song.id" @click="playSong(song)">
           <span>{{ index + 1 }}. {{ song.name }}</span> 
           <span class="duration">{{ song.duration }}</span>
         </li>
@@ -26,14 +26,15 @@
 <script setup>
 import { ref } from 'vue';
 import { useStore } from '../stores/yourStore';
-import { songsDisc1, songsDisc2 } from '../mock/data';
 import { parseBlob } from 'music-metadata-browser';
+
+const props = defineProps({
+  songsDisc1: Array,
+  songsDisc2: Array
+});
 
 const store = useStore();
 const audioPlayer = ref(null);
-
-const songsDisc1Ref = ref(songsDisc1);
-const songsDisc2Ref = ref(songsDisc2);
 const currentCover = ref(null);
 
 const playSong = async (song) => {
