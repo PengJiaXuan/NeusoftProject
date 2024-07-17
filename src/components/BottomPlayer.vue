@@ -32,7 +32,7 @@ import { ref, watch } from 'vue';
 import { useStore } from '../stores/yourStore';
 
 const store = useStore();
-const audioPlayer = ref(document.querySelector('audio'));
+const audioPlayer = ref(new Audio());
 const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
@@ -69,11 +69,11 @@ const togglePlayPause = () => {
 };
 
 const prevSong = () => {
-  // Implement previous song logic
+  // 实现上一首歌曲逻辑
 };
 
 const nextSong = () => {
-  // Implement next song logic
+  // 实现下一首歌曲逻辑
 };
 
 const seek = (event) => {
