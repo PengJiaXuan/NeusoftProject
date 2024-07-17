@@ -17,12 +17,12 @@
       </div>
       <div class="progress">
         <span class="current-time">{{ formatTime(currentTime) }}</span>
-        <input type="range" min="0" :max="duration" v-model="currentTime" @input="seek">
+        <input type="range" min="0" :max="duration" v-model="currentTime" @input="seek" class="progress-bar">
         <span class="duration">{{ formatTime(duration) }}</span>
       </div>
     </div>
     <div class="right-section">
-      <input type="range" min="0" max="100" v-model="volume" @input="setVolume">
+      <input type="range" min="0" max="100" v-model="volume" @input="setVolume" class="volume-control">
     </div>
   </div>
 </template>
@@ -173,9 +173,10 @@ const formatTime = (seconds) => {
   width: 100%;
 }
 
-.progress input[type="range"] {
+.progress-bar {
   flex: 1;
   margin: 0 10px;
+  max-width: 600px; /* 设置进度条最大宽度 */
 }
 
 .current-time, .duration {
@@ -188,8 +189,8 @@ const formatTime = (seconds) => {
   align-items: center;
 }
 
-.right-section input[type="range"] {
+.volume-control {
   width: 100px;
-  margin: 0 10px;
+  margin-right: 20px; /* 设置右侧边距 */
 }
 </style>
