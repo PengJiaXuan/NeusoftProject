@@ -163,13 +163,16 @@ audioPlayer.value.ontimeupdate = () => {
   color: #fff;
 }
 
+.song-artist {
+  font-size: 14px;
+  color: #ccc;
+}
+
 .center-section {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
   margin: 0 20px;
 }
 
@@ -177,6 +180,7 @@ audioPlayer.value.ontimeupdate = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 .controls button {
