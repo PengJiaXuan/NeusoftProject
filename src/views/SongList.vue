@@ -3,8 +3,8 @@
     <div class="left-panel">
       <div class="album-cover-container" @mouseover="showPlayButton = true" @mouseleave="showPlayButton = false">
         <img src="/1.png" alt="Album Cover" class="album-cover">
-        <div v-if="showPlayButton" class="play-button" @click="playFirstSong">
-          <img src="/Play-Btn.jpg" alt="Play Button" class="play-button-image">
+        <div v-if="showPlayButton" class="play-button" @click="togglePlayPause">
+          <img :src="isPlaying ? '/pause-btn.jpg' : '/play-btn.jpg'" alt="Play/Pause Button" class="play-button-image">
         </div>
       </div>
       <div class="album-info">
@@ -38,6 +38,7 @@ const props = defineProps({
 const store = useStore();
 const audioPlayer = ref(null);
 const showPlayButton = ref(false);
+const isPlaying = ref(false);
 
 const playFirstSong = () => {
   if (props.songs.length > 0) {
@@ -45,11 +46,25 @@ const playFirstSong = () => {
   }
 };
 
+const togglePlayPause = () => {
+  if (isPlaying.value) {
+    audioPlayer.value.pause();
+  } else {
+    if (audioPlayer.value.src) {
+      audioPlayer.value.play();
+    } else {
+      playFirstSong();
+    }
+  }
+  isPlaying.value = !isPlaying.value;
+};
+
 const playSong = (song) => {
   store.setCurrentSong(song);
   if (audioPlayer.value) {
     audioPlayer.value.src = song.url;
     audioPlayer.value.play();
+    isPlaying.value = true;
   }
 };
 </script>
@@ -92,8 +107,6 @@ const playSong = (song) => {
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +116,6 @@ const playSong = (song) => {
 .play-button-image {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 }
 
 .album-info {
