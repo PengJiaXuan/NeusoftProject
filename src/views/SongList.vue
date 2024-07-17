@@ -105,17 +105,19 @@ const playSong = (song) => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 50px; /* 根据需要调整大小 */
+  height: 50px; /* 根据需要调整大小 */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: transparent; /* 确保按钮背景透明 */
 }
 
 .play-button-image {
   width: 100%;
   height: 100%;
+  background-color: transparent; /* 确保按钮背景透明 */
 }
 
 .album-info {
