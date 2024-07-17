@@ -4,7 +4,7 @@
       <div class="album-cover-container" @mouseover="showPlayButton = true" @mouseleave="showPlayButton = false">
         <img src="/1.png" alt="Album Cover" class="album-cover">
         <div v-if="showPlayButton" class="play-button" @click="togglePlayPause">
-          <img :src="isPlaying ? '/pause-btn.png' : '/play-btn.png'" alt="Play/Pause Button" class="play-button-image">
+          <img :src="isPlaying ? '/pause-btn.jpg' : '/play-btn.jpg'" alt="Play/Pause Button" class="play-button-image">
         </div>
       </div>
       <div class="album-info">
