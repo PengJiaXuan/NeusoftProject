@@ -11,7 +11,7 @@
       <div class="controls">
         <button @click="prevSong">&#9664;&#9664;</button>
         <button @click="togglePlayPause">
-          <img :src="isPlaying ? '/pause-btn.png' : '/play-btn.png'" alt="Play/Pause Button" class="control-button-image">
+          <img :src="isPlaying ? '/bottompause-btn.png' : '/bottomplay-btn.png'" alt="Play/Pause Button" class="control-button-image">
         </button>
         <button @click="nextSong">&#9654;&#9654;</button>
       </div>
@@ -28,8 +28,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useStore } from '../stores/yourStore';
+import { songs } from '../mock/data';
 
 const store = useStore();
 const audioPlayer = ref(new Audio());
@@ -37,15 +38,18 @@ const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
 const volume = ref(100);
+const currentSongIndex = ref(0);
 
-const currentSong = store.currentSong;
+const currentSong = computed(() => songs[currentSongIndex.value]);
 
 watch(currentSong, (newSong) => {
   if (audioPlayer.value) {
     audioPlayer.value.src = newSong.url;
     audioPlayer.value.play();
     isPlaying.value = true;
-    duration.value = audioPlayer.value.duration;
+    audioPlayer.value.onloadedmetadata = () => {
+      duration.value = audioPlayer.value.duration;
+    };
   }
 });
 
@@ -66,15 +70,35 @@ watch(currentTime, (newTime) => {
 });
 
 const togglePlayPause = () => {
-  isPlaying.value = !isPlaying.value;
+  if (!isPlaying.value && !audioPlayer.value.src) {
+    playSong(0);
+  } else {
+    isPlaying.value = !isPlaying.value;
+  }
+};
+
+const playSong = (index) => {
+  currentSongIndex.value = index;
+  if (audioPlayer.value) {
+    audioPlayer.value.src = songs[currentSongIndex.value].url;
+    audioPlayer.value.play();
+    isPlaying.value = true;
+    audioPlayer.value.onloadedmetadata = () => {
+      duration.value = audioPlayer.value.duration;
+    };
+  }
 };
 
 const prevSong = () => {
-  // 实现上一首歌曲逻辑
+  if (currentSongIndex.value > 0) {
+    playSong(currentSongIndex.value - 1);
+  }
 };
 
 const nextSong = () => {
-  // 实现下一首歌曲逻辑
+  if (currentSongIndex.value < songs.length - 1) {
+    playSong(currentSongIndex.value + 1);
+  }
 };
 
 const seek = (event) => {
@@ -92,6 +116,11 @@ const formatTime = (seconds) => {
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+};
+
+// 更新 currentTime 以便在音频播放时同步显示进度条
+audioPlayer.value.ontimeupdate = () => {
+  currentTime.value = audioPlayer.value.currentTime;
 };
 </script>
 
@@ -151,6 +180,7 @@ const formatTime = (seconds) => {
 .controls {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .controls button {
@@ -176,7 +206,7 @@ const formatTime = (seconds) => {
 .progress-bar {
   flex: 1;
   margin: 0 10px;
-  max-width: 1100px; /* 设置进度条最大宽度 */
+  max-width: 1300px; /* 设置进度条最大宽度 */
 }
 
 .current-time, .duration {
@@ -191,6 +221,6 @@ const formatTime = (seconds) => {
 
 .volume-control {
   width: 100px;
-  margin-right: 20px; /* 设置右侧边距 */
+  margin-right: 30px; /* 设置右侧边距 */
 }
 </style>
