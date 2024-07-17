@@ -202,7 +202,6 @@ audioPlayer.value.ontimeupdate = () => {
 .progress-bar {
   flex: 1;
   margin: 0 10px;
-  max-width: 1300px; /* 设置进度条最大宽度 */
 }
 
 .current-time, .duration {
