@@ -4,7 +4,6 @@
       <img :src="currentSong?.cover || '/1.png'" alt="Album Cover" class="album-cover">
       <div class="song-info">
         <div class="song-name">{{ currentSong?.name || 'Song Name' }}</div>
-        <div class="song-artist">{{ currentSong?.artist || 'Artist' }}</div>
       </div>
     </div>
     <div class="center-section">
@@ -164,16 +163,13 @@ audioPlayer.value.ontimeupdate = () => {
   color: #fff;
 }
 
-.song-artist {
-  font-size: 14px;
-  color: #ccc;
-}
-
 .center-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
   margin: 0 20px;
 }
 
