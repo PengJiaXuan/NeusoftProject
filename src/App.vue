@@ -1,12 +1,14 @@
 <template>
   <div id="App">
-    <SongList :songs="songs" />
+    <SongList :songs="songsRef" />
+    <BottomPlayer />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import SongList from './views/SongList.vue';
+import BottomPlayer from './components/BottomPlayer.vue';
 import { songs } from './mock/data';
 
 const songsRef = ref(songs);
