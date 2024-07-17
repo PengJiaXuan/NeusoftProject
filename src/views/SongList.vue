@@ -1,7 +1,12 @@
 <template>
   <div class="player">
     <div class="left-panel">
-      <img src="/1.png" alt="Album Cover" class="album-cover">
+      <div class="album-cover-container" @mouseover="showPlayButton = true" @mouseleave="showPlayButton = false">
+        <img src="/1.png" alt="Album Cover" class="album-cover">
+        <div v-if="showPlayButton" class="play-button" @click="playFirstSong">
+          <img src="/path/to/play-button.png" alt="Play Button">
+        </div>
+      </div>
       <div class="album-info">
         <h1>Yoga</h1>
         <p>LagoonWest • 1999 • 8首歌曲, 50分钟29秒</p>
@@ -32,6 +37,13 @@ const props = defineProps({
 
 const store = useStore();
 const audioPlayer = ref(null);
+const showPlayButton = ref(false);
+
+const playFirstSong = () => {
+  if (props.songs.length > 0) {
+    playSong(props.songs[0]);
+  }
+};
 
 const playSong = (song) => {
   store.setCurrentSong(song);
@@ -62,11 +74,35 @@ const playSong = (song) => {
   margin-bottom: 2rem;
 }
 
+.album-cover-container {
+  position: relative;
+}
+
 .album-cover {
   max-width: 100%;
   max-height: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.play-button img {
+  width: 50%;
+  height: 50%;
 }
 
 .album-info {
