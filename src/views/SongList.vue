@@ -4,7 +4,7 @@
       <div class="album-cover-container" @mouseover="showPlayButton = true" @mouseleave="showPlayButton = false">
         <img src="/1.png" alt="Album Cover" class="album-cover">
         <div v-if="showPlayButton" class="play-button" @click="playFirstSong">
-          <img src="/path/to/play-button.png" alt="Play Button">
+          <img src="/Play-Btn.jpg" alt="Play Button" class="play-button-image">
         </div>
       </div>
       <div class="album-info">
@@ -100,9 +100,10 @@ const playSong = (song) => {
   cursor: pointer;
 }
 
-.play-button img {
-  width: 50%;
-  height: 50%;
+.play-button-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .album-info {
