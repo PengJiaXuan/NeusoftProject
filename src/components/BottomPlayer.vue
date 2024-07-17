@@ -45,6 +45,7 @@ watch(currentSong, (newSong) => {
     audioPlayer.value.src = newSong.url;
     audioPlayer.value.play();
     isPlaying.value = true;
+    duration.value = audioPlayer.value.duration;
   }
 });
 
@@ -103,7 +104,7 @@ const formatTime = (seconds) => {
   justify-content: space-between;
   align-items: center;
   background-color: #000;
-  padding: 10px;
+  padding: 10px 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
@@ -128,6 +129,7 @@ const formatTime = (seconds) => {
 .song-name {
   font-size: 16px;
   font-weight: bold;
+  color: #fff;
 }
 
 .song-artist {
@@ -139,6 +141,8 @@ const formatTime = (seconds) => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  margin: 0 20px;
 }
 
 .controls {
@@ -151,7 +155,7 @@ const formatTime = (seconds) => {
   border: none;
   color: #fff;
   font-size: 18px;
-  margin: 0 5px;
+  margin: 0 10px;
   cursor: pointer;
 }
 
@@ -163,14 +167,17 @@ const formatTime = (seconds) => {
 .progress {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .progress input[type="range"] {
+  flex: 1;
   margin: 0 10px;
 }
 
 .current-time, .duration {
   font-size: 12px;
+  color: #fff;
 }
 
 .right-section {
@@ -179,6 +186,7 @@ const formatTime = (seconds) => {
 }
 
 .right-section input[type="range"] {
+  width: 100px;
   margin: 0 10px;
 }
 </style>
