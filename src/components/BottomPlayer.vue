@@ -101,8 +101,7 @@ const formatTime = (seconds) => {
   bottom: 0;
   left: 0;
   right: 0;
-  width: calc(100% - 40px); /* 减去内边距 */
-  margin: 0 20px; /* 两边各留20px的边距 */
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
