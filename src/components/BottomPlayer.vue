@@ -29,23 +29,26 @@
 <script setup>
 import { ref, watch, computed, onMounted } from 'vue';
 import { useStore } from '../stores/yourStore';
+import { songs } from '../mock/data';
 
 const store = useStore();
 const audioPlayer = ref(new Audio());
-const isPlaying = computed(() => store.isPlaying.value);
+const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
 const volume = ref(100);
-const currentSong = computed(() => store.currentSong.value);
+const currentSongIndex = ref(0);
+
+const currentSong = computed(() => songs[currentSongIndex.value]);
 
 watch(currentSong, (newSong) => {
-  if (newSong && audioPlayer.value) {
+  if (audioPlayer.value) {
     audioPlayer.value.src = newSong.url;
     audioPlayer.value.load();
     audioPlayer.value.onloadedmetadata = () => {
       duration.value = audioPlayer.value.duration;
       audioPlayer.value.play();
-      store.setIsPlaying(true);
+      isPlaying.value = true;
     };
   }
 });
@@ -70,29 +73,32 @@ const togglePlayPause = () => {
   if (!isPlaying.value && !audioPlayer.value.src) {
     playSong(0);
   } else {
-    store.setIsPlaying(!isPlaying.value);
+    isPlaying.value = !isPlaying.value;
   }
 };
 
 const playSong = (index) => {
-  const song = store.songs.value[index];
-  if (song) {
-    store.setCurrentSong(song);
-    store.setIsPlaying(true);
+  currentSongIndex.value = index;
+  if (audioPlayer.value) {
+    audioPlayer.value.src = songs[currentSongIndex.value].url;
+    audioPlayer.value.load();
+    audioPlayer.value.onloadedmetadata = () => {
+      duration.value = audioPlayer.value.duration;
+      audioPlayer.value.play();
+      isPlaying.value = true;
+    };
   }
 };
 
 const prevSong = () => {
-  const currentIndex = store.songs.value.findIndex(song => song.id === currentSong.value.id);
-  if (currentIndex > 0) {
-    playSong(currentIndex - 1);
+  if (currentSongIndex.value > 0) {
+    playSong(currentSongIndex.value - 1);
   }
 };
 
 const nextSong = () => {
-  const currentIndex = store.songs.value.findIndex(song => song.id === currentSong.value.id);
-  if (currentIndex < store.songs.value.length - 1) {
-    playSong(currentIndex + 1);
+  if (currentSongIndex.value < songs.length - 1) {
+    playSong(currentSongIndex.value + 1);
   }
 };
 

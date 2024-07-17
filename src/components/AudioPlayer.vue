@@ -15,7 +15,7 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue';
-import { useStore } from '../store';
+import { useStore } from '../stores/yourStore';
 
 const audio = ref(null);
 const store = useStore();
@@ -100,5 +100,3 @@ const formattedDuration = computed(() => formattedTime(duration.value));
   font-weight: bold;
 }
 </style>
-
-
