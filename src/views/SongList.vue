@@ -9,7 +9,7 @@
       </div>
       <div class="album-info">
         <h1>Yoga</h1>
-        <p>LagoonWest • 1999 • {{ songCount }}首歌曲, {{ totalDuration }}</p>
+        <p>{{ artistName }} • 1999 • {{ totalSongs }}首歌曲, {{ formattedTotalDuration }}</p>
       </div>
     </div>
     <div class="right-panel">
@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { useStore } from '../stores/yourStore';
 
 const props = defineProps({
@@ -37,7 +37,15 @@ const props = defineProps({
 const store = useStore();
 const audioPlayer = ref(null);
 const showPlayButton = ref(false);
-const isPlaying = computed(() => store.isPlaying);
+const isPlaying = computed(() => store.isPlaying.value);
+const currentSong = computed(() => store.currentSong.value);
+
+const totalSongs = props.songs.length;
+const totalDuration = props.songs.reduce((acc, song) => {
+  const [minutes, seconds] = song.duration.split(':').map(Number);
+  return acc + minutes * 60 + seconds;
+}, 0);
+const formattedTotalDuration = `${Math.floor(totalDuration / 60)}分钟${totalDuration % 60}秒`;
 
 const playFirstSong = () => {
   if (props.songs.length > 0) {
@@ -47,15 +55,13 @@ const playFirstSong = () => {
 
 const togglePlayPause = () => {
   if (isPlaying.value) {
-    audioPlayer.value.pause();
-    store.setPlaying(false);
+    store.setIsPlaying(false);
   } else {
     if (audioPlayer.value.src) {
-      audioPlayer.value.play();
+      store.setIsPlaying(true);
     } else {
       playFirstSong();
     }
-    store.setPlaying(true);
   }
 };
 
@@ -64,26 +70,31 @@ const playSong = (song) => {
   if (audioPlayer.value) {
     audioPlayer.value.src = song.url;
     audioPlayer.value.play();
-    store.setPlaying(true);
+    store.setIsPlaying(true);
   }
 };
 
-// 计算歌曲数量和总时长
-const songCount = computed(() => props.songs.length);
+const artistName = "LagoonWest";
 
-const totalDuration = computed(() => {
-  let totalSeconds = 0;
-  props.songs.forEach(song => {
-    const parts = song.duration.split(':');
-    const minutes = parseInt(parts[0]);
-    const seconds = parseInt(parts[1]);
-    totalSeconds += (minutes * 60) + seconds;
-  });
+watch(currentSong, (newSong) => {
+  if (newSong && audioPlayer.value) {
+    audioPlayer.value.src = newSong.url;
+    audioPlayer.value.play();
+  }
+});
 
-  const totalMinutes = Math.floor(totalSeconds / 60);
-  const remainingSeconds = totalSeconds % 60;
+watch(isPlaying, (newVal) => {
+  if (audioPlayer.value) {
+    if (newVal) {
+      audioPlayer.value.play();
+    } else {
+      audioPlayer.value.pause();
+    }
+  }
+});
 
-  return `${totalMinutes}分钟${remainingSeconds}秒`;
+onMounted(() => {
+  store.setSongs(props.songs);
 });
 </script>
 
