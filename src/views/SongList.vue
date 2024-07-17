@@ -13,7 +13,6 @@
       </div>
     </div>
     <div class="right-panel">
-      <div class="album">专辑: Lagoon West</div>
       <ul>
         <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song)">
           <span class="track-number">{{ index + 1 }}</span>
