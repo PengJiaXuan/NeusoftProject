@@ -99,7 +99,10 @@ const formatTime = (seconds) => {
 .bottom-player {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  width: calc(100% - 40px); /* 减去内边距 */
+  margin: 0 20px; /* 两边各留20px的边距 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,6 +110,7 @@ const formatTime = (seconds) => {
   padding: 10px 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  border-radius: 10px 10px 0 0; /* 上边圆角 */
 }
 
 .left-section {
