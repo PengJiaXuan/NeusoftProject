@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, onMounted } from 'vue';
 import { useStore } from '../stores/yourStore';
 import { songs } from '../mock/data';
 
@@ -44,10 +44,11 @@ const currentSong = computed(() => songs[currentSongIndex.value]);
 watch(currentSong, (newSong) => {
   if (audioPlayer.value) {
     audioPlayer.value.src = newSong.url;
-    audioPlayer.value.play();
-    isPlaying.value = true;
+    audioPlayer.value.load();
     audioPlayer.value.onloadedmetadata = () => {
       duration.value = audioPlayer.value.duration;
+      audioPlayer.value.play();
+      isPlaying.value = true;
     };
   }
 });
@@ -80,10 +81,11 @@ const playSong = (index) => {
   currentSongIndex.value = index;
   if (audioPlayer.value) {
     audioPlayer.value.src = songs[currentSongIndex.value].url;
-    audioPlayer.value.play();
-    isPlaying.value = true;
+    audioPlayer.value.load();
     audioPlayer.value.onloadedmetadata = () => {
       duration.value = audioPlayer.value.duration;
+      audioPlayer.value.play();
+      isPlaying.value = true;
     };
   }
 };
@@ -102,6 +104,7 @@ const nextSong = () => {
 
 const seek = (event) => {
   currentTime.value = event.target.value;
+  audioPlayer.value.currentTime = currentTime.value;
 };
 
 const setVolume = (event) => {
@@ -117,10 +120,11 @@ const formatTime = (seconds) => {
   return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 };
 
-// 更新 currentTime 以便在音频播放时同步显示进度条
-audioPlayer.value.ontimeupdate = () => {
-  currentTime.value = audioPlayer.value.currentTime;
-};
+onMounted(() => {
+  audioPlayer.value.ontimeupdate = () => {
+    currentTime.value = audioPlayer.value.currentTime;
+  };
+});
 </script>
 
 <style scoped>
@@ -163,11 +167,6 @@ audioPlayer.value.ontimeupdate = () => {
   color: #fff;
 }
 
-.song-artist {
-  font-size: 14px;
-  color: #ccc;
-}
-
 .center-section {
   display: flex;
   flex-direction: column;
@@ -180,7 +179,6 @@ audioPlayer.value.ontimeupdate = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
 }
 
 .controls button {
@@ -206,6 +204,7 @@ audioPlayer.value.ontimeupdate = () => {
 .progress-bar {
   flex: 1;
   margin: 0 10px;
+  max-width: 1300px; /* 设置进度条最大宽度 */
 }
 
 .current-time, .duration {

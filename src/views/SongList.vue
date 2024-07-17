@@ -9,7 +9,7 @@
       </div>
       <div class="album-info">
         <h1>Yoga</h1>
-        <p>LagoonWest • 1999 • 8首歌曲, 50分钟29秒</p>
+        <p>LagoonWest • 1999 • {{ songCount }}首歌曲, {{ totalDuration }}</p>
       </div>
     </div>
     <div class="right-panel">
@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useStore } from '../stores/yourStore';
 
 const props = defineProps({
@@ -37,7 +37,7 @@ const props = defineProps({
 const store = useStore();
 const audioPlayer = ref(null);
 const showPlayButton = ref(false);
-const isPlaying = ref(false);
+const isPlaying = computed(() => store.isPlaying);
 
 const playFirstSong = () => {
   if (props.songs.length > 0) {
@@ -48,14 +48,15 @@ const playFirstSong = () => {
 const togglePlayPause = () => {
   if (isPlaying.value) {
     audioPlayer.value.pause();
+    store.setPlaying(false);
   } else {
     if (audioPlayer.value.src) {
       audioPlayer.value.play();
     } else {
       playFirstSong();
     }
+    store.setPlaying(true);
   }
-  isPlaying.value = !isPlaying.value;
 };
 
 const playSong = (song) => {
@@ -63,9 +64,27 @@ const playSong = (song) => {
   if (audioPlayer.value) {
     audioPlayer.value.src = song.url;
     audioPlayer.value.play();
-    isPlaying.value = true;
+    store.setPlaying(true);
   }
 };
+
+// 计算歌曲数量和总时长
+const songCount = computed(() => props.songs.length);
+
+const totalDuration = computed(() => {
+  let totalSeconds = 0;
+  props.songs.forEach(song => {
+    const parts = song.duration.split(':');
+    const minutes = parseInt(parts[0]);
+    const seconds = parseInt(parts[1]);
+    totalSeconds += (minutes * 60) + seconds;
+  });
+
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const remainingSeconds = totalSeconds % 60;
+
+  return `${totalMinutes}分钟${remainingSeconds}秒`;
+});
 </script>
 
 <style scoped>
@@ -137,12 +156,6 @@ const playSong = (song) => {
 
 .right-panel {
   width: 100%;
-}
-
-.album {
-  font-size: 1.2em;
-  margin: 20px 0 10px;
-  text-align: left;
 }
 
 ul {
