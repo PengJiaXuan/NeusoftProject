@@ -176,7 +176,7 @@ const formatTime = (seconds) => {
 .progress-bar {
   flex: 1;
   margin: 0 10px;
-  max-width: 600px; /* 设置进度条最大宽度 */
+  max-width: 1000px; /* 设置进度条最大宽度 */
 }
 
 .current-time, .duration {
