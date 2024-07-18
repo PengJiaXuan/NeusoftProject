@@ -113,19 +113,19 @@ const artistName = "LagoonWest";
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px; /* 根据需要调整大小 */
-  height: 50px; /* 根据需要调整大小 */
+  width: 50px; 
+  height: 50px; 
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: transparent; /* 确保按钮背景透明 */
+  background-color: transparent; 
 }
 
 .play-button-image {
   width: 100%;
   height: 100%;
-  background-color: transparent; /* 确保按钮背景透明 */
+  background-color: transparent;
 }
 
 .album-info {

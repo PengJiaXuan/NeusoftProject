@@ -141,7 +141,7 @@ onMounted(() => {
   padding: 10px 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  border-radius: 10px 10px 0 0; /* 上边圆角 */
+  border-radius: 10px 10px 0 0;
 }
 
 .left-section {
@@ -204,7 +204,7 @@ onMounted(() => {
 .progress-bar {
   flex: 1;
   margin: 0 10px;
-  max-width: 1300px; /* 设置进度条最大宽度 */
+  max-width: 1300px;
 }
 
 .current-time, .duration {
@@ -219,6 +219,6 @@ onMounted(() => {
 
 .volume-control {
   width: 100px;
-  margin-right: 30px; /* 设置右侧边距 */
+  margin-right: 30px;
 }
 </style>
