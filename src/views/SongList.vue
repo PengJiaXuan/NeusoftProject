@@ -14,11 +14,19 @@
     </div>
     <div class="right-panel">
       <ul>
+        <li class="legend">
+          <span>曲目编号</span>
+          <span>曲名</span>
+          <span>艺术家</span>
+          <span>时长</span>
+          <span>播放次数</span>
+        </li>
         <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song)">
           <span class="track-number">{{ index + 1 }}</span>
           <span class="track-name">{{ song.name }}</span>
           <span class="track-artist">LagoonWest</span>
           <span class="track-duration">{{ song.duration }}</span>
+          <span class="time-played">{{ song.timePlayed }}</span>
         </li>
       </ul>
       <audio ref="audioPlayer" class="audio-player"></audio>
@@ -72,6 +80,7 @@ const playSong = (song) => {
     audioPlayer.value.play();
     isPlaying.value = true;
   }
+  song.timePlayed += 1;
 };
 
 const artistName = "LagoonWest";
@@ -133,6 +142,17 @@ const artistName = "LagoonWest";
   margin-top: 1rem;
 }
 
+
+li.legend {
+  background-color: var(--button-background-dark);
+  color: var(--background-light);
+  cursor: default;
+}
+
+li.legend:hover {
+  background-color: var(--button-background-dark); /* unset hover bg for legend*/
+}
+
 .album-info h1 {
   font-size: 2.5rem;
   margin: 0;
@@ -155,7 +175,7 @@ ul {
 
 li {
   display: grid;
-  grid-template-columns: 1fr 4fr 2fr 1fr;
+  grid-template-columns: 1fr 4fr 2fr 1fr 1fr;
   gap: 10px;
   align-items: center;
   padding: 10px;
@@ -171,11 +191,11 @@ li:hover {
   color: var(--background-light);
 }
 
-.track-number, .track-name, .track-artist, .track-duration {
+.track-number, .track-name, .track-artist, .track-duration, .time-played {
   text-align: left;
 }
 
-.track-number, .track-duration {
+.track-number, .track-duration, .time-played {
   text-align: center;
   color: #666;
 }
