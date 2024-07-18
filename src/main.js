@@ -1,15 +1,14 @@
+// src/main.js
 import { createApp } from 'vue';
 import App from './App.vue';
-import { createPinia } from 'pinia';
+import store from './stores/yourStore'; // Ensure this path is correct
 import './style.css'; 
 import { Buffer } from 'buffer';
 
-
 window.Buffer = Buffer;
 
-const pinia = createPinia();
 const app = createApp(App);
 
-app.use(pinia);
+app.use(store); // Use Vuex store
 
 app.mount('#app');

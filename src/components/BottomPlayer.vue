@@ -3,7 +3,11 @@
     <div class="left-section">
       <img :src="currentSong?.cover || '/1.png'" alt="Album Cover" class="album-cover">
       <div class="song-info">
-        <div class="song-name">{{ currentSong?.name || 'Song Name' }}</div>
+        <div class="song-name">
+          <span v-if="splitSongName">{{ splitSongName.composer }}</span>
+          <br>
+          <span v-if="splitSongName">{{ splitSongName.title }}</span>
+        </div>
       </div>
     </div>
     <div class="center-section">
@@ -37,7 +41,7 @@
 
 <script setup>
 import { ref, watch, computed, onMounted } from 'vue';
-import { useStore } from '../stores/yourStore';
+import { useStore } from 'vuex';
 import { songs } from '../mock/data';
 
 const store = useStore();
@@ -47,9 +51,20 @@ const currentTime = ref(0);
 const duration = ref(0);
 const volume = ref(100);
 const playbackRate = ref(1);
-const currentSongIndex = ref(0);
+const currentSongIndex = ref(store.state.currentSongIndex);
 
-const currentSong = computed(() => songs[currentSongIndex.value]);
+const currentSong = computed(() => store.state.currentSong);
+
+const splitSongName = computed(() => {
+  if (currentSong.value && currentSong.value.name) {
+    const parts = currentSong.value.name.split(' - ');
+    return {
+      composer: parts[0] || '',
+      title: parts[1] || '',
+    };
+  }
+  return null;
+});
 
 watch(currentSong, (newSong) => {
   if (audioPlayer.value) {
@@ -95,8 +110,11 @@ const togglePlayPause = () => {
 
 const playSong = (index) => {
   currentSongIndex.value = index;
+  const song = songs[currentSongIndex.value];
+  store.commit('setCurrentSong', song);
+  store.commit('setCurrentSongIndex', currentSongIndex.value);
   if (audioPlayer.value) {
-    audioPlayer.value.src = songs[currentSongIndex.value].url;
+    audioPlayer.value.src = song.url;
     audioPlayer.value.load();
     audioPlayer.value.onloadedmetadata = () => {
       duration.value = audioPlayer.value.duration;
@@ -109,12 +127,16 @@ const playSong = (index) => {
 const prevSong = () => {
   if (currentSongIndex.value > 0) {
     playSong(currentSongIndex.value - 1);
+  } else {
+    playSong(songs.length - 1);
   }
 };
 
 const nextSong = () => {
   if (currentSongIndex.value < songs.length - 1) {
     playSong(currentSongIndex.value + 1);
+  } else {
+    playSong(0);
   }
 };
 

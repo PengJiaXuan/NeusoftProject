@@ -1,31 +1,28 @@
-import { reactive, computed } from 'vue';
+// src/stores/yourStore.js
+import { createStore } from 'vuex';
 
-export const useStore = () => {
-  const state = reactive({
+const store = createStore({
+  state: {
     currentSong: null,
     isPlaying: false,
-    songs: []
-  });
+    currentSongIndex: 0,
+  },
+  mutations: {
+    setCurrentSong(state, song) {
+      state.currentSong = song;
+    },
+    setIsPlaying(state, isPlaying) {
+      state.isPlaying = isPlaying;
+    },
+    setCurrentSongIndex(state, index) {
+      state.currentSongIndex = index;
+    }
+  },
+  getters: {
+    currentSong: (state) => state.currentSong,
+    isPlaying: (state) => state.isPlaying,
+    currentSongIndex: (state) => state.currentSongIndex,
+  }
+});
 
-  const setCurrentSong = (song) => {
-    state.currentSong = song;
-  };
-
-  const setIsPlaying = (isPlaying) => {
-    state.isPlaying = isPlaying;
-  };
-
-  const setSongs = (songs) => {
-    state.songs = songs;
-  };
-
-  return {
-    state,
-    setCurrentSong,
-    setIsPlaying,
-    setSongs,
-    currentSong: computed(() => state.currentSong),
-    isPlaying: computed(() => state.isPlaying),
-    songs: computed(() => state.songs)
-  };
-};
+export default store;

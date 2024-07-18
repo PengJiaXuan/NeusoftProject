@@ -1,11 +1,8 @@
 <template>
   <div class="player">
     <div class="left-panel">
-      <div class="album-cover-container" @mouseover="showPlayButton = true" @mouseleave="showPlayButton = false">
+      <div class="album-cover-container">
         <img src="/1.png" alt="Album Cover" class="album-cover">
-        <div v-if="showPlayButton" class="play-button" @click="togglePlayPause">
-          <img :src="isPlaying ? '/pause-btn.png' : '/play-btn.png'" alt="Play/Pause Button" class="play-button-image">
-        </div>
       </div>
       <div class="album-info">
         <h1>Yoga</h1>
@@ -21,10 +18,10 @@
           <span>时长</span>
           <span>播放次数</span>
         </li>
-        <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song)">
+        <li v-for="(song, index) in songs" :key="song.id" @click="playSong(song, index)">
           <span class="track-number">{{ index + 1 }}</span>
           <span class="track-name">{{ song.name }}</span>
-          <span class="track-artist">LagoonWest</span>
+          <span class="track-artist">{{ artistName }}</span>
           <span class="track-duration">{{ song.duration }}</span>
           <span class="time-played">{{ song.timePlayed }}</span>
         </li>
@@ -36,17 +33,15 @@
 
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue';
-import { useStore } from '../stores/yourStore';
+import { useStore } from 'vuex';
 
 const props = defineProps({
   songs: Array
 });
 
 const store = useStore();
-const audioPlayer = ref(null);
-const showPlayButton = ref(false);
-const isPlaying = computed(() => store.isPlaying.value);
-const currentSong = computed(() => store.currentSong.value);
+const isPlaying = computed(() => store.state.isPlaying);
+const currentSong = computed(() => store.state.currentSong);
 
 const totalSongs = props.songs.length;
 const totalDuration = props.songs.reduce((acc, song) => {
@@ -55,55 +50,19 @@ const totalDuration = props.songs.reduce((acc, song) => {
 }, 0);
 const formattedTotalDuration = `${Math.floor(totalDuration / 60)}分钟${totalDuration % 60}秒`;
 
-const playFirstSong = () => {
-  if (props.songs.length > 0) {
-    playSong(props.songs[0]);
-  }
-};
-
-const togglePlayPause = () => {
-  if (isPlaying.value) {
-    store.setIsPlaying(false);
-  } else {
-    if (audioPlayer.value.src) {
-      store.setIsPlaying(true);
-    } else {
-      playFirstSong();
-    }
-  }
-};
-
-const playSong = (song) => {
-  store.setCurrentSong(song);
-  if (audioPlayer.value) {
-    audioPlayer.value.src = song.url;
-    audioPlayer.value.play();
-    store.setIsPlaying(true);
-  }
+const playSong = (song, index) => {
+  store.commit('setCurrentSong', song);
+  store.commit('setIsPlaying', true);
+  store.commit('setCurrentSongIndex', index);
   song.timePlayed += 1;
 };
 
 const artistName = "LagoonWest";
 
 watch(currentSong, (newSong) => {
-  if (newSong && audioPlayer.value) {
-    audioPlayer.value.src = newSong.url;
-    audioPlayer.value.play();
+  if (newSong) {
+    store.commit('setIsPlaying', true);
   }
-});
-
-watch(isPlaying, (newVal) => {
-  if (audioPlayer.value) {
-    if (newVal) {
-      audioPlayer.value.play();
-    } else {
-      audioPlayer.value.pause();
-    }
-  }
-});
-
-onMounted(() => {
-  store.setSongs(props.songs);
 });
 </script>
 
@@ -138,31 +97,10 @@ onMounted(() => {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px; 
-  height: 50px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: transparent; 
-}
-
-.play-button-image {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-}
-
 .album-info {
   text-align: center;
   margin-top: 1rem;
 }
-
 
 li.legend {
   background-color: var(--button-background-dark);
