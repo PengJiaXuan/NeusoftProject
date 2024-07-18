@@ -19,6 +19,15 @@
         <input type="range" min="0" :max="duration" v-model="currentTime" @input="seek" class="progress-bar">
         <span class="duration">{{ formatTime(duration) }}</span>
       </div>
+      <div class="playback-speed">
+        <label for="speed">Speed:</label>
+        <select id="speed" v-model="playbackRate" @change="setPlaybackRate">
+          <option value="0.5">0.5x</option>
+          <option value="1">1x</option>
+          <option value="1.5">1.5x</option>
+          <option value="2">2x</option>
+        </select>
+      </div>
     </div>
     <div class="right-section">
       <input type="range" min="0" max="100" v-model="volume" @input="setVolume" class="volume-control">
@@ -37,6 +46,7 @@ const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
 const volume = ref(100);
+const playbackRate = ref(1);
 const currentSongIndex = ref(0);
 
 const currentSong = computed(() => songs[currentSongIndex.value]);
@@ -66,6 +76,12 @@ watch(isPlaying, (newVal) => {
 watch(currentTime, (newTime) => {
   if (audioPlayer.value) {
     audioPlayer.value.currentTime = newTime;
+  }
+});
+
+watch(playbackRate, (newRate) => {
+  if (audioPlayer.value) {
+    audioPlayer.value.playbackRate = newRate;
   }
 });
 
@@ -111,6 +127,13 @@ const setVolume = (event) => {
   volume.value = event.target.value;
   if (audioPlayer.value) {
     audioPlayer.value.volume = volume.value / 100;
+  }
+};
+
+const setPlaybackRate = (event) => {
+  playbackRate.value = event.target.value;
+  if (audioPlayer.value) {
+    audioPlayer.value.playbackRate = playbackRate.value;
   }
 };
 
@@ -220,5 +243,22 @@ onMounted(() => {
 .volume-control {
   width: 100px;
   margin-right: 30px;
+}
+
+.playback-speed {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.playback-speed label {
+  margin-right: 5px;
+}
+
+.playback-speed select {
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 2px 5px;
 }
 </style>
