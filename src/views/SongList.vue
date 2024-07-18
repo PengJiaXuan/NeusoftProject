@@ -117,7 +117,7 @@ onMounted(() => {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
 }
 
 .left-panel {
