@@ -2,7 +2,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './stores/yourStore'; // Ensure this path is correct
-import './style.css'; 
+import './styles/style.css'; 
 import { Buffer } from 'buffer';
 
 window.Buffer = Buffer;
