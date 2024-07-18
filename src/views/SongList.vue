@@ -150,7 +150,7 @@ li.legend {
 }
 
 li.legend:hover {
-  background-color: var(--button-background-dark); /* unset hover bg for legend*/
+  background-color: var(--button-background-dark); 
 }
 
 .album-info h1 {
