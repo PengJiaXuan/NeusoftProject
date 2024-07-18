@@ -9,7 +9,7 @@
       </div>
       <div class="album-info">
         <h1>Yoga</h1>
-        <p>{{ artistName }} • 1999 • {{ totalSongs }}首歌曲, {{ totalDuration }}</p>
+        <p>{{ artistName }} • 1999 • {{ totalSongs }}首歌曲, {{ formattedTotalDuration }}</p>
       </div>
     </div>
     <div class="right-panel">
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { useStore } from '../stores/yourStore';
 
 const props = defineProps({
@@ -45,7 +45,8 @@ const props = defineProps({
 const store = useStore();
 const audioPlayer = ref(null);
 const showPlayButton = ref(false);
-const isPlaying = ref(false);
+const isPlaying = computed(() => store.isPlaying.value);
+const currentSong = computed(() => store.currentSong.value);
 
 const totalSongs = props.songs.length;
 const totalDuration = props.songs.reduce((acc, song) => {
@@ -62,15 +63,14 @@ const playFirstSong = () => {
 
 const togglePlayPause = () => {
   if (isPlaying.value) {
-    audioPlayer.value.pause();
+    store.setIsPlaying(false);
   } else {
     if (audioPlayer.value.src) {
-      audioPlayer.value.play();
+      store.setIsPlaying(true);
     } else {
       playFirstSong();
     }
   }
-  isPlaying.value = !isPlaying.value;
 };
 
 const playSong = (song) => {
@@ -78,12 +78,33 @@ const playSong = (song) => {
   if (audioPlayer.value) {
     audioPlayer.value.src = song.url;
     audioPlayer.value.play();
-    isPlaying.value = true;
+    store.setIsPlaying(true);
   }
   song.timePlayed += 1;
 };
 
 const artistName = "LagoonWest";
+
+watch(currentSong, (newSong) => {
+  if (newSong && audioPlayer.value) {
+    audioPlayer.value.src = newSong.url;
+    audioPlayer.value.play();
+  }
+});
+
+watch(isPlaying, (newVal) => {
+  if (audioPlayer.value) {
+    if (newVal) {
+      audioPlayer.value.play();
+    } else {
+      audioPlayer.value.pause();
+    }
+  }
+});
+
+onMounted(() => {
+  store.setSongs(props.songs);
+});
 </script>
 
 <style scoped>
