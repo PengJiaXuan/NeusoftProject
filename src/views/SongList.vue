@@ -67,6 +67,10 @@ watch(currentSong, (newSong) => {
 </script>
 
 <style scoped>
+h1 {
+  color: white;
+}
+
 .player {
   display: flex;
   flex-direction: column;
