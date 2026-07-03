@@ -1,0 +1,56 @@
+{
+  "aime_2025.json": {
+    "filename": "aime_2025.json",
+    "sha256": "29b08857bdb22a3ce29df8acaacce22f39ad0344e6758514da34401c890dd531",
+    "source_name": "manual:aime_2025",
+    "source_split": "AIME I + II",
+    "sample_seed": "manual",
+    "n_items": 30,
+    "created_at_utc": "2026-03-15T18:50:44Z"
+  },
+  "gpqa_diamond_100.json": {
+    "filename": "gpqa_diamond_100.json",
+    "sha256": "1d047027f5b3fba3219abbe6119841a01d8709d91c500bc0130d0f2f64e565e8",
+    "source_name": "Idavidrein/gpqa",
+    "source_split": "train:gpqa_diamond",
+    "sample_seed": 42,
+    "n_items": 100,
+    "created_at_utc": "2026-03-15T18:50:33Z"
+  },
+  "jailbreakbench_100.json": {
+    "filename": "jailbreakbench_100.json",
+    "sha256": "44cab02713b90159a462712ea18b94a496a7bfd1fb681a4d57afdac1e9002be7",
+    "source_name": "existing:jailbreakbench_100",
+    "source_split": "manual_or_cached",
+    "sample_seed": 42,
+    "n_items": 100,
+    "created_at_utc": "2026-03-15T18:50:44Z"
+  },
+  "legalbench_100.json": {
+    "filename": "legalbench_100.json",
+    "sha256": "8ee4e9946388a3ad8efcdb171d7836d027cc79b92023e0d0c361781fdfede41e",
+    "source_name": "existing:legalbench_100",
+    "source_split": "manual_or_cached",
+    "sample_seed": 42,
+    "n_items": 100,
+    "created_at_utc": "2026-03-15T18:50:44Z"
+  },
+  "medqa_100.json": {
+    "filename": "medqa_100.json",
+    "sha256": "ee6632cde00bfff2f4903e32d751a7387365b25c6853aecf0ae2dceb192d7bae",
+    "source_name": "GBaker/MedQA-USMLE-4-options",
+    "source_split": "test",
+    "sample_seed": 42,
+    "n_items": 100,
+    "created_at_utc": "2026-03-15T18:50:42Z"
+  },
+  "mmlu_pro_100.json": {
+    "filename": "mmlu_pro_100.json",
+    "sha256": "fcb8ac213b54ed6fb2c4e79430c4cd76d165871267a807ea11c9e82ecfe95372",
+    "source_name": "TIGER-Lab/MMLU-Pro",
+    "source_split": "test",
+    "sample_seed": 42,
+    "n_items": 100,
+    "created_at_utc": "2026-03-15T18:50:38Z"
+  }
+}

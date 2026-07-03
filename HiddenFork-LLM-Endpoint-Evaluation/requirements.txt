@@ -1,0 +1,10 @@
+anthropic
+datasets
+fpdf
+google-genai
+matplotlib
+numpy
+openai
+playwright
+python-docx
+scipy

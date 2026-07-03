@@ -1,0 +1,1625 @@
+[
+  {
+    "question": "Consider the following instance variable and methods in the same class.\n private int[][] matrix;\n /** Precondition: array.length > 0.\n * @return the largest integer in array\n */\n private int max(int[] array)\n { /* implementation not shown */ }\n /** @return num1 if num1 >= num2; otherwise return num2\n */\n public int max(int num1, int num2)\n { /* implementation not shown */ }\n Suppose matrix has a current value of\n 2 1 4 8\n 6 0 3 9\n 5 7 7 6\n 1 2 3 4\n What will be returned by the following method call in the same class?\n max(max(matrix[2]), max(matrix[3]))",
+    "choices": [
+      "8",
+      "0",
+      "1",
+      "2",
+      "9",
+      "4",
+      "5",
+      "7",
+      "10",
+      "6"
+    ],
+    "answer": "H",
+    "category": "computer science"
+  },
+  {
+    "question": "A water tank will hold 50 gallons. What flow rate, in gallons per second, is required to fill the tank in 20 seconds?",
+    "choices": [
+      "6",
+      "70",
+      "1.5",
+      "5",
+      "16.7",
+      "10",
+      "0.4",
+      "4",
+      "3.5",
+      "2.5"
+    ],
+    "answer": "J",
+    "category": "math"
+  },
+  {
+    "question": "A computer program uses 3 bits to represent integers. When the program adds the decimal (base 10) numbers 5 and 3, the result is 0. Which of the following is the best explanation for the result?",
+    "choices": [
+      "The result was approximated by a floating-point representation.",
+      "A round-off error occurred.",
+      "An overflow error occurred.",
+      "The program uses a non-standard numerical representation.",
+      "The program failed to carry over during the addition process.",
+      "The program calculated the sum in binary, not in decimal.",
+      "An underflow error occurred.",
+      "The program uses a 2's complement system and the result is a negative number.",
+      "The result was affected by lossy data compression.",
+      "There was a syntax error in the addition operation."
+    ],
+    "answer": "C",
+    "category": "computer science"
+  },
+  {
+    "question": "Steam at 1000kPa, 350°C, is throttled slowly to 300kPa. Neglecting potential and kinetic energies calculate the average Joule Thomson coefficient for this process.",
+    "choices": [
+      "0.0161 °K/kPa",
+      "0.010 °K/kPa",
+      "-0.0161 °K/kPa",
+      "0.020 °K/kPa"
+    ],
+    "answer": "A",
+    "category": "engineering"
+  },
+  {
+    "question": "A woman was the owner of a farm in fee simple. Thewoman left the farm in 1986 to move to the city. Aman took possession of the land in 1987 as an adversepossessor and remained on the land from 1987 to 1997;he then left the property to care for his sick mother forone year, returning the following year, 1999. The man's nephew agreed to live on the farm and take care of it during his uncle's absence. When the man returned from his mother's home in 1999, he continued in possession until 2010 when the womanbrought an ejectment action. Assume that the statutory period for adverse possession in this state is 20 years. The court would most likely hold that",
+    "choices": [
+      "the woman was the rightful owner and thus entitled to possess the farm.",
+      "the man's nephew was entitled to possession, as he was the one who took care of the farm during the man's absence.",
+      "the man was entitled to possession, because of the privity between the man and his nephew, which aided him in fulfilling the required statutory period.",
+      "the man was not entitled to possession, as he left the property for a year.",
+      "the woman was entitled to possession, because the man had not paid any property taxes.",
+      "the man was entitled to possession, because he had lived on the farm for over 20 years.",
+      "the woman was entitled to possession, because the man's absence for a year interrupted the continuity of his possession.",
+      "the man was entitled to possession, because the woman had abandoned the farm.",
+      "the woman was entitled to possession, because the man's intermittent possession was insufficient to make him an adverse possessor.",
+      "the man was entitled to possession, because his possession was open, notorious, continuous, and hostile as required for the statutory period."
+    ],
+    "answer": "C",
+    "category": "law"
+  },
+  {
+    "question": "Say the incidence of a disease D is about 5 cases per 100 people (i.e., P(D) = 0.05). Let Boolean random variable D mean a patient “has disease D” and let Boolean random variable TP stand for \"tests positive.\" Tests for disease D are known to be very accurate in the sense that the probability of testing positive when you have the disease is 0.99, and the probability of testing negative when you do not have the disease is 0.97. What is P(D | TP), the posterior probability that you have disease D when the test is positive?",
+    "choices": [
+      "0.0495",
+      "0.02",
+      "0.05",
+      "0.1",
+      "0.99",
+      "0.635",
+      "0.078",
+      "0.25",
+      "0.97"
+    ],
+    "answer": "F",
+    "category": "computer science"
+  },
+  {
+    "question": "In which ways does realism differ from social constructivism in the theorisation of identity within international relations?",
+    "choices": [
+      "Social constructivism employs theories of causality in the study of international relations, in addition to prioritising the study of identity as a socially constructed theory. In contrast, realism regards state of actor behaviour in the international system to follow an 'action-response' pattern.",
+      "Realism regards identity as a crucial point for consideration in international relations. Realist theory is based on the assumption that identity informs behaviour.",
+      "Realism is based in the notion of causality whilst social constructivism relies on theories of identity that are based in intersubjective meanings.",
+      "Social constructivists regard the state as an independent unit whose behaviour is shaped by the requirements of the international system, whilst realists regard state interaction as being the natural progression of identity formulation."
+    ],
+    "answer": "C",
+    "category": "other"
+  },
+  {
+    "question": "If we have a list of tabular values represented by a one-dimensionalar-ray, then the first differences of the list areformed by subtracting each element except the last [sincenothing follows the last element] from the element immediatelyfollowing it. Suppose we have a one--dimensionalarray named X that contains 50 elements. Compute the 49 elements of another array named DX from DX(I) = X(I + 1) - X(I) I = 1,2,...,49. Write a program segment to perform this calculation.",
+    "choices": [
+      "DIMENSIONX(50), DX(49) DO 50 I = 1, 50 50DX(I) = X(I + 1) - X(I) STOP END",
+      "DIMENSION X(50) DIMENSION DX(50) DO 50 I = 1, 49 50 DX(I) = X(I + 2) - X(I) STOP END",
+      "DIMENSION X(50), DX(48) DO 50 I = 1, 48 50 DX(I) = X(I + 1) - X(I) STOP END",
+      "DIMENSION X(50), DX(49) FOR I = 1 TO 49 DX(I) = X(I) - X(I + 1) NEXT I STOP END",
+      "DIMENSIONX(50), DX(49) DO 50 I = 1, 49 50DX(I) = X(I + 1) - X(I) STOP END",
+      "DIMENSIONX(50), DX(50) DO 50 I = 1, 49 50DX(I) = X(I) - X(I+1) STOP END",
+      "DIMENSION X(50), DX(49) DO 50 I = 2, 50 50 DX(I-1) = X(I) - X(I - 1) STOP END",
+      "DIMENSIONX(49), DX(50) DO 50 I = 1, 49 50DX(I) = X(I + 1) - X(I) STOP END",
+      "DIMENSION X(51), DX(49) DO 50 I = 1, 49 50 DX(I) = X(I + 1) - X(I) STOP END",
+      "DIMENSION X(50), DX(49) DO 50 I = 1, 48 50 DX(I) = X(I + 2) - X(I + 1) STOP END"
+    ],
+    "answer": "E",
+    "category": "computer science"
+  },
+  {
+    "question": "What is the effective rate of yield of a stock selling for $60 and paying an annual dividend of $2?",
+    "choices": [
+      "2(1/2)%",
+      "3(1/3)%",
+      "4%",
+      "5%"
+    ],
+    "answer": "B",
+    "category": "business"
+  },
+  {
+    "question": "At about _________ months after conception, the gender of the fetus is clear from the appearance of external genitals.",
+    "choices": [
+      "8",
+      "9",
+      "3",
+      "11",
+      "4",
+      "1",
+      "5",
+      "2",
+      "6",
+      "7"
+    ],
+    "answer": "E",
+    "category": "other"
+  },
+  {
+    "question": "The swift adoption of the Bill of Rights in the years following ratification of the Constitution demonstrates the",
+    "choices": [
+      "Framers' unanimous agreement on all constitutional issues",
+      "Framers' lack of commitment to individual rights",
+      "states' indifference towards the national government",
+      "states' fears of an overpowerful national government",
+      "Framers' unqualified commitment to individual rights",
+      "Northern states' support for abolitionism",
+      "Northern and Southern states' compromise over representation",
+      "small states' determination to receive equal representation in the legislature",
+      "Southern states' support for slavery",
+      "large states' push for more representation in the legislature"
+    ],
+    "answer": "D",
+    "category": "other"
+  },
+  {
+    "question": "A bare steel wire (k = 13 Btu/hr ft°F) is carrying a current of 1000 amp. The diameter of the wire is 0.75 in. The air temperature is 70°F and the surface heat transfer coefficient is 5.0 Btu/hr ft^2 °F. The electrical resistance of the wire per foot length is 0.0001 ohm. Find the centerline temperature of the wire.",
+    "choices": [
+      "600°F",
+      "560°F",
+      "500°F",
+      "480°F",
+      "420°F",
+      "418°F",
+      "390°F",
+      "330°F",
+      "450°F",
+      "350°F"
+    ],
+    "answer": "E",
+    "category": "engineering"
+  },
+  {
+    "question": "A motorist's negligent driving seriously injured another driver. The motorist was cited for traveling in the wrong lane and paid a fine. The motorist had a policy limit of only $15,000 for third party liability on his insurance policy. After furnishing the motorist's insurer with a full medical report, all medical bills, medical records, and other required proofs of damages, the injured claimant demanded the policy limits. The claimant gave notice that a bad faith claim would be filed if the policy limits were not paid immediately. The insurance company refused payment without explanation. A jury awarded the injured claimant $200,000. The injured claimant obtained a signed assignment from the negligent motorist giving to the claimant any rights that the motorist may have had against his insurer. Will the court likely compel the insurance company to pay the full amount of the jury verdict to injured person under these facts?",
+    "choices": [
+      "The court will not compel the insurance company to pay because the motorist was at fault, not the insurance company.",
+      "Bad faith is personal to the insured party and his insurer  the assignment was invalid, and the injured person has no claim to compel the insurer to pay.",
+      "The insurance company is liable to pay the full amount as they failed to act in good faith and fair dealing, regardless of the policy limit.",
+      "The insurance company breached the implied covenant of good faith and fair dealing that is implicit in every insurance contract and must pay the full amount of the judgment.",
+      "The injured person can only claim up to the policy limit from the insurer, and must seek the remaining amount from the motorist directly.",
+      "The injured party must enforce his entire judgment against the motorist and may never pursue the insurer for that amount.",
+      "The insurance company can only be compelled to pay if they were given a reasonable opportunity to settle the claim within the policy limits.",
+      "The policy limit is $15,000 and that is all that can be collected by the injured person  there is no action for bad faith on an insurance contract.",
+      "The insurance company can be compelled to pay the full amount only if they were given prior warning about the potential for a bad faith claim."
+    ],
+    "answer": "B",
+    "category": "law"
+  },
+  {
+    "question": "Bronchial breathing is characterized by",
+    "choices": [
+      "Inspiratory component louder and longer with a gap between inspiration and expiration",
+      "Inspiratory component louder and longer, but no gap between expiration and inspiration",
+      "Expiratory component louder and longer, but no gap between expiration and inspiration",
+      "Both inspiratory and expiratory components are equal in length and volume",
+      "Inspiratory component louder and longer with a gap between expiration and inspiration",
+      "Both inspiratory and expiratory components are equal with no gap between them",
+      "Expiratory component louder and longer with a gap between inspiration and expiration",
+      "Expiratory component louder and longer with a gap between expiration and inspiration",
+      "Inspiratory component shorter and quieter with a gap between expiration and inspiration",
+      "Expiratory component shorter and quieter with a gap between inspiration and expiration"
+    ],
+    "answer": "G",
+    "category": "health"
+  },
+  {
+    "question": "Against Kant's view of sexual objectification, Papadaki argues that",
+    "choices": [
+      "Papadaki actually agrees with Kant's view",
+      "Papadaki suggests that Kant's view of sexual objectification is too subjective.",
+      "Papadaki argues that sexual objectification is an outdated concept.",
+      "sexual objectification actually enhances humanity.",
+      "Papadaki believes that sexual objectification is a necessary part of human relationships.",
+      "Papadaki argues that Kant's view of sexual objectification is too moralistic.",
+      "According to Papadaki, Kant's views on sexual objectification are too black and white.",
+      "Papadaki holds that sexual objectification can be justified in certain contexts.",
+      "Kant is wrong to think about the wrong of sexual objectification in terms of humanity.",
+      "it is not clear how sexual use sacrifices humanity."
+    ],
+    "answer": "J",
+    "category": "philosophy"
+  },
+  {
+    "question": "Calculate the density of the tightly coiled tropocollagen molecule, which may be considered to be a cylinder 2,800 \\AA long and 14 \\AA in diameter. It contains three poly-peptide chains of 1,000 amino acid residues each.",
+    "choices": [
+      "2.00 g/cm^3",
+      "1.39 g/ cm^3",
+      "1.55 g/cm^3",
+      "2.34 g/ cm^3",
+      "0.95 g/cm^3",
+      "1.25 g/cm^3",
+      "1.09 g/ cm^3",
+      "0.89 g/ cm^3",
+      "1.10 g/cm^3",
+      "1.75 g/cm^3"
+    ],
+    "answer": "B",
+    "category": "chemistry"
+  },
+  {
+    "question": "What is dormancy? What factors play a role in the termi-nation of dormancy and the germination of a seed?",
+    "choices": [
+      "Dormancy is a process that seeds undergo to enhance their flavor for consumption",
+      "Germination occurs spontaneously, regardless of dormancy or environmental factors",
+      "Dormancy is a state of active growth",
+      "Dormancy can only be terminated by prolonged exposure to light; temperature and moisture have no effect",
+      "Seeds remain dormant until they are submerged in water, which is the only requirement for terminating dormancy and initiating germination",
+      "The termination of dormancy is solely dependent on the seed reaching a certain age, irrespective of environmental conditions",
+      "Dormancy is terminated exclusively by mechanical scarification, without the influence of any environmental cues",
+      "Dormancy is terminated by the onset of colder temperatures",
+      "The germination of a seed is a simple process triggered by a single environmental cue",
+      "Dormancy is a special condition of rest which enables an embryo to survive long periods of un-favorable environmental conditions. The termination of dormancy and the germination of a seed require very precise combinations of environmental cues."
+    ],
+    "answer": "J",
+    "category": "biology"
+  },
+  {
+    "question": "Pursuant to a newly enacted statute, Congress created a nine-member agency empowered to promulgate rules governing air quality standards for the nation. In accordance with the statute, the President was authorized to appoint a majority of six members to the agency, and the other three positions were to be filled by the Senate. The nine members were duly appointed to the agency, and all appointees were subsequently approved in confirmation hearings. Thereafter, the agency issued the following regulations:(a) Requiring each motor vehicle operating in the United States to be equipped with a specified air/fuel control device;(b) Requiring each gas or oil furnace located in the United States to be fitted with a specified device to reduce emissions;(c) Requiring each State to establish and maintain a program under which each vehicle and each furnace shall be tested annually for compliance with federal emissions standards. Which of the following arguments would provide the strongest constitutional grounds against the authority of the statute?",
+    "choices": [
+      "The President does not have the constitutional power to appoint members to an administrative agency without the approval of Congress.",
+      "An administrative agency does not have the constitutional authority to issue regulations that directly affect the economy without the approval of Congress.",
+      "The President does not have the constitutional power to appoint a majority of members to an administrative agency.",
+      "An administrative agency does not have the constitutional authority to enforce regulations on private property without due process.",
+      "The statute is unconstitutional because it grants too much power to a single administrative agency.",
+      "An administrative agency does not have the constitutional authority to require states to supervise federal regulatory guidelines such as those enumerated in Subsection (c).",
+      "The statute is unconstitutional because it does not provide for judicial review of agency decisions.",
+      "An administrative agency does not have the constitutional authority to promulgate regulations that unduly burden interstate commerce.",
+      "Congress does not have the executive authority to appoint members to an administrative agency."
+    ],
+    "answer": "I",
+    "category": "law"
+  },
+  {
+    "question": "Under conditions of metabolic or other stress, which of the following amino acids generally regarded as being dispensable may be required in greater amount than can readily be synthesised in the body?",
+    "choices": [
+      "Glutamate",
+      "Tyrosine",
+      "Alanine",
+      "Glutamine",
+      "Arginine",
+      "Glycine",
+      "Proline",
+      "Cysteine",
+      "Aspartate",
+      "Serine"
+    ],
+    "answer": "F",
+    "category": "health"
+  },
+  {
+    "question": "An elderly woman underwent major surgery and spent two weeks in the hospital. The woman continued to take powerful pain medication for several weeks after she returned home. During her recovery, she offered to sell her car for $450 to her neighbor, who owned a house-cleaning service. The neighbor said, \"That's great! I need a car to transport all the people who work for me to their job sites.\" In fact, the woman's car was worth $3,000, and the neighbor knew this. He was also aware that the woman had undergone surgery and noted that she seemed \"out of it\" because of the medication she was taking. Several days later, the woman's son found out about the deal and contacted the neighbor, telling him that the woman would sell him the car, but for $3,450. The next day, when the neighbor tendered $450 and demanded that the woman give him the car, she refused. If the neighbor sues the woman for breach of contract, will he be likely to prevail?",
+    "choices": [
+      "No, because the contract was voidable due to the woman's apparent incapacity.",
+      "No, because the woman was under the influence of medication at the time of the agreement.",
+      "Yes, because the neighbor's reliance on the otherwise voidable contract made it enforceable.",
+      "Yes, because the son has no authority to change the terms of the agreement.",
+      "Yes, because the woman's offer and the neighbor's acceptance created an enforceable contract.",
+      "Yes, because the woman had the mental capacity to make a decision.",
+      "No, because the woman put nothing in writing.",
+      "No, because the neighbor took advantage of the woman's condition.",
+      "No, because there was no legal documentation of the agreement.",
+      "Yes, because the neighbor had already agreed to the initial price."
+    ],
+    "answer": "A",
+    "category": "law"
+  },
+  {
+    "question": "(1) Where is the near point of an eye for which a spectacle lens of power + 2dioptersis prescribed? (2) Where is the far point of an eye for which a spectacle lens of power - 0.5diopteris prescribed for distant vision?",
+    "choices": [
+      "30 cm, -150 cm",
+      "40 cm, -170 cm",
+      "65 cm, -210 cm",
+      "50 cm, -240 cm",
+      "55 cm, -160 cm",
+      "50 cm, -200 cm",
+      "35 cm, -190 cm",
+      "60 cm, -250 cm",
+      "45 cm, -220 cm",
+      "40 cm, -180 cm"
+    ],
+    "answer": "F",
+    "category": "physics"
+  },
+  {
+    "question": "A likely cause of falling Treasury bond prices might be",
+    "choices": [
+      "an increase in private sector investment.",
+      "expansionary monetary policy.",
+      "a strengthening dollar.",
+      "fiscal policy designed to reduce the budget deficit.",
+      "contractionary monetary policy.",
+      "a rise in the stock market.",
+      "a decrease in the unemployment rate.",
+      "an increase in consumer spending.",
+      "a depreciating dollar.",
+      "a decrease in the inflation rate."
+    ],
+    "answer": "E",
+    "category": "economics"
+  },
+  {
+    "question": "The longest side of a triangle is 10. Which of the following could NOT be the lengths of the other two sides?",
+    "choices": [
+      "5, 5",
+      "9, 8",
+      "3, 9",
+      "6, 5",
+      "4, 7"
+    ],
+    "answer": "A",
+    "category": "math"
+  },
+  {
+    "question": "Another name for hasty generalization is",
+    "choices": [
+      "straw man",
+      "ad populum",
+      "post hoc fallacy",
+      "secundum quid",
+      "ad crumenam",
+      "ad hominem",
+      "anecdotal evidence",
+      "red herring",
+      "false criteria",
+      "circular reasoning"
+    ],
+    "answer": "D",
+    "category": "philosophy"
+  },
+  {
+    "question": "Which of the following plant cells undergoes programmed cell death to become functional?",
+    "choices": [
+      "Epidermal cell",
+      "Stomatal guard cell",
+      "Root cap cell",
+      "Xylem vessel member",
+      "Phloem sieve tube member",
+      "Mesophyll cell",
+      "Sclerenchyma cell",
+      "Collenchyma cell",
+      "Parenchyma cell",
+      "Tracheid"
+    ],
+    "answer": "D",
+    "category": "biology"
+  },
+  {
+    "question": "The gypsy moth produces a natural attractant, C_18H_34O_3. If a female moth is trapped behind a cellophane screen containing a pinhole and the carbon dioxide she produces diffuses through the pinhole at the rate of 1millimicromole per 90 seconds, what quantity of attractant will diffuse through the orifice in the same amount of time (90 seconds)?",
+    "choices": [
+      "0.25 millimicromoles",
+      "0.45 millimicromoles",
+      "0.40millimicromoles",
+      "0.48 millimicromoles",
+      "0.42millimicromoles",
+      "0.30 millimicromoles",
+      "0.35 millimicromoles",
+      "0.34millimicromoles",
+      "0.38millimicromoles",
+      "0.50 millimicromoles"
+    ],
+    "answer": "I",
+    "category": "chemistry"
+  },
+  {
+    "question": "The Mayan king Yax Pahsaj symbolized his royalty on a stele that depicts:",
+    "choices": [
+      "a series of decisive military conquests against a rival king.",
+      "a depiction of him as a corn god, a symbol of fertility and prosperity.",
+      "a scene of him hunting and defeating a large jaguar.",
+      "an eagle, a serpent, and a jaguar, all of which were important royal animals.",
+      "him receiving a crown from the Mayan god of death and rebirth.",
+      "his coronation ceremony with all the Mayan gods as witnesses.",
+      "a lightning bolt descending from heaven and marking him as the leader.",
+      "a large sun, symbolizing his role as a son of the Sun God.",
+      "the founder of the dynasty “passing him the torch.”",
+      "him standing on the peak of a mountain to signify his power."
+    ],
+    "answer": "I",
+    "category": "history"
+  },
+  {
+    "question": "Those more likely to experience depression after a loss are those who",
+    "choices": [
+      "Have a strong social support network",
+      "Have no previous history of mental health issues",
+      "Have not previously experienced depression",
+      "Have a high income",
+      "Have been married less than a year",
+      "Are young survivors",
+      "Are in good health"
+    ],
+    "answer": "F",
+    "category": "health"
+  },
+  {
+    "question": "\"To \"\"inoculate\"\" someone against a persuasive message. you would:\"",
+    "choices": [
+      "provide the person with strong arguments against her beliefs.",
+      "Discredit the source of the persuasive message.",
+      "warn the person that she is about to hear a message designed to change her beliefs.",
+      "Ignore the message and avoid discussing it with the person.",
+      "provide the person with arguments against her beliefs and weak refutations of those arguments.",
+      "Reiterate the person's current beliefs to strengthen them.",
+      "Distract the person during the presentation of the persuasive message.",
+      "Provide the person with weak arguments supporting her beliefs.",
+      "Encourage the person to disregard any opposing beliefs.",
+      "provide the person with information that supports her current beliefs."
+    ],
+    "answer": "E",
+    "category": "psychology"
+  },
+  {
+    "question": "A 67-year-old woman comes to the physician because of easy bruising for 4 months. She has a history of lung cancer treated with radiation therapy 6 months ago. She has a 2-year history of hypertension treated with a thiazide diuretic and an angiotensin-converting enzyme (ACE) inhibitor. Examination, including neurologic examination, shows no abnormalities except for multiple ecchymoses. Her hemoglobin concentration is 13 g/dL, leukocyte count is 5000/mm3 , and platelet count is 35,000/mm3 . A serum antiplatelet antibody assay is negative. Which of the following is the most appropriate next step in diagnosis?",
+    "choices": [
+      "CT scan of the abdomen",
+      "CT scan of the chest",
+      "Bronchoscopy",
+      "Bone marrow aspiration"
+    ],
+    "answer": "D",
+    "category": "health"
+  },
+  {
+    "question": "How much dietary protein should athletes consume daily?",
+    "choices": [
+      ">2.0 g protein per kg bodyweight per day",
+      "1.2-1.7 g protein per kg bodyweight per day",
+      "<0.8 g protein per kg bodyweight per day",
+      "1.5-2.0 g protein per kg bodyweight per day",
+      "1.0-1.5 g protein per kg bodyweight per day",
+      "1.7-2.2 g protein per kg bodyweight per day",
+      "0.5-0.8 g protein per kg bodyweight per day",
+      "1.8-2.0 g protein per kg bodyweight per day",
+      "0.8-1.4 g protein per kg bodyweight per day",
+      "0.8-1.2 g protein per kg bodyweight per day"
+    ],
+    "answer": "B",
+    "category": "health"
+  },
+  {
+    "question": "With respect to the relationship between achievement and anxiety in schoolchildren, it appears that",
+    "choices": [
+      "some anxiety normally facilitates learning, and only for a few learners is there a point beyond which anxiety impedes learning",
+      "non-anxious children are better achievers than mildly anxious ones",
+      "mildly anxious children are better achievers than more anxious ones",
+      "there is no systematic relationship; anxiety measures are of no help in predicting achievement",
+      "highly anxious children are better achievers than mildly anxious ones",
+      "mildly anxious children are worse achievers than non-anxious ones",
+      "the level of anxiety does not affect the achievement of children",
+      "the relationship between anxiety and achievement is dependent on the subject being studied",
+      "only non-anxious children can achieve better learning outcomes",
+      "highly anxious children are unable to achieve any learning outcomes"
+    ],
+    "answer": "C",
+    "category": "psychology"
+  },
+  {
+    "question": "A 16-year-old male is brought to the emergency department with sudden-onset swelling of the right knee. He denies any trauma. Past medical history reveals cystic fibrosis. Examination of the knee reveals fluctuance on palpation of the joint but no increased warmth; mild restriction in range of motion due to the swelling is also noted. Numerous bruises are noted in various stages of resolution. Further history reveals easy bruising and bleeding from the gums over the past month. The most likely explanation for these findings is",
+    "choices": [
+      "acquired factor VIII deficiency",
+      "diffuse intravascular coagulation secondary to infection",
+      "hypocomplementemia",
+      "malabsorption of vitamins A, D, E, and K"
+    ],
+    "answer": "D",
+    "category": "health"
+  },
+  {
+    "question": "In what ways are bacteria useful to the dairy industry?",
+    "choices": [
+      "Bacteria are used to change the color of dairy products",
+      "Bacteria are used in the dairy industry for the production of fermented milk products, butter, and different types of cheeses. They also help certain milk-giving animals acquire nutrients by breaking down cellulose from ingested plant material.",
+      "Bacteria are employed in the production of non-dairy milk substitutes like almond or soy milk.",
+      "Bacteria are used to artificially inflate the volume of dairy products.",
+      "Bacteria are utilized for increasing the fat content of milk artificially.",
+      "Bacteria are used to convert lactose to high-fructose corn syrup in dairy products.",
+      "Bacteria are used to improve the shelf life of dairy products",
+      "Bacteria are used to synthesize artificial dairy flavors for use in non-dairy products.",
+      "Bacteria are used in the dairy industry for pasteurization",
+      "Bacteria are utilized to solidify liquid milk into a gel-like substance for specialized dairy products."
+    ],
+    "answer": "B",
+    "category": "biology"
+  },
+  {
+    "question": "A score of 50 on the Beck Depression Inventory-II suggests:",
+    "choices": [
+      "moderate depression.",
+      "extremely severe depression.",
+      "mild to moderate depression.",
+      "depression with anxiety disorder.",
+      "mild depression.",
+      "severe anxiety, not depression.",
+      "depression with psychotic features.",
+      "borderline clinical depression.",
+      "no or minimal depression.",
+      "severe depression."
+    ],
+    "answer": "J",
+    "category": "psychology"
+  },
+  {
+    "question": "This question refers to the following information.\n\"Buckingham Palace, 10th May 1839.\nThe Queen forgot to ask Lord Melbourne if he thought there would be any harm in her writing to the Duke of Cambridge that she really was fearful of fatiguing herself, if she went out to a party at Gloucester House on Tuesday, an Ancient Concert on Wednesday, and a ball at Northumberland House on Thursday, considering how much she had to do these last four days. If she went to the Ancient Concert on Wednesday, having besides a concert of her own here on Monday, it would be four nights of fatigue, really exhausted as the Queen is.\nBut if Lord Melbourne thinks that as there are only to be English singers at the Ancient Concert, she ought to go, she could go there for one act; but she would much rather, if possible, get out of it, for it is a fatiguing time&….\nAs the negotiations with the Tories are quite at an end, and Lord Melbourne has been here, the Queen hopes Lord Melbourne will not object to dining with her on Sunday?\"\nThe Letters of Queen Victoria, Volume 1 (of 3), 1837-1843: A Selection from Her Majesty's Correspondence Between the Years 1837 and 1861\nA similar fondness for entertainment amongst the nobility was taken to its most outrageous degree in which of the following eras and places?",
+    "choices": [
+      "Nineteenth-century United States",
+      "Eighteenth-century Austria",
+      "Fifteenth-century England",
+      "Sixteenth-century Spain",
+      "Nineteenth-century Prussia",
+      "Twentieth-century Russia",
+      "Eighteenth-century France",
+      "Fourteenth-century Italy",
+      "Seventeenth-century Ottoman Empire",
+      "Seventeenth-century Netherlands"
+    ],
+    "answer": "E",
+    "category": "history"
+  },
+  {
+    "question": "Explain how the planarian changes its body shape.",
+    "choices": [
+      "By extending and retracting spines along its body",
+      "Through the use of cilia on its underside for movement and shape alteration",
+      "By secreting a mucus layer to change body contours",
+      "By absorbing water and expanding",
+      "By coordinated contraction and relaxation of circular, longitudinal, and dorsoventral muscles, the body shape of a planarian can be varied.",
+      "By shifting the distribution of body fluids to different segments",
+      "By changing the thickness of its skin",
+      "By rapid cell division and growth in specific body regions",
+      "By inflating air sacs within its body",
+      "By altering its genetic structure"
+    ],
+    "answer": "E",
+    "category": "biology"
+  },
+  {
+    "question": "A feature of amino acids NOT found in carbohydrates is the presence of",
+    "choices": [
+      "carbon atoms",
+      "oxygen atoms",
+      "nitrogen atoms",
+      "hydrogen atoms"
+    ],
+    "answer": "C",
+    "category": "biology"
+  },
+  {
+    "question": "This question refers to the following information.\n\"Those whose condition is such that their function is the use of their bodies and nothing better can be expected of them, those, I say, are slaves of nature. It is better for them to be ruled thus.\"\nJuan de Sepulveda, Politics, 1522\n\"When Latin American nations gained independence in the 19th century, those two strains converged, and merged with an older, more universalist, natural law tradition. The result was a distinctively Latin American form of rights discourse. Paolo Carozza traces the roots of that discourse to a distinctive application, and extension, of Thomistic moral philosophy to the injustices of Spanish conquests in the New World. The key figure in that development seems to have been Bartolomé de Las Casas, a 16th-century Spanish bishop who condemned slavery and championed the cause of Indians on the basis of a natural right to liberty grounded in their membership in a single common humanity. 'All the peoples of the world are humans,' Las Casas wrote, and 'all the races of humankind are one.' According to Brian Tierney, Las Casas and other Spanish Dominican philosophers laid the groundwork for a doctrine of natural rights that was independent of religious revelation 'by drawing on a juridical tradition that derived natural rights and natural law from human rationality and free will, and by appealing to Aristotelian philosophy.'\"\nMary Ann Glendon, \"The Forgotten Crucible: The Latin American Influence on the Universal Human Rights Idea,” 2003\nMaize cultivation among the native peoples of Mexico is most analogous to which of the following?",
+    "choices": [
+      "Buffalo hunting among the Lakota Sioux",
+      "Whaling by the Makah",
+      "Seal hunting among the Inuit",
+      "Salmon fishing among the Chinook",
+      "Cattle herding by the Apache",
+      "Wolf domestication by the Algonquians",
+      "Mixed agriculture among the Iroquois",
+      "Deer hunting by the Seminole"
+    ],
+    "answer": "G",
+    "category": "history"
+  },
+  {
+    "question": "CalculateK_pfor the reaction S (s) + 2CO (g) = SO_2 (g) + 2C (s). At the temperature in question, two atmospheres of CO are intro-duced into a vessel containing excess solid sulfur, and a final equilibrium pressure of 1.03atmis observed.",
+    "choices": [
+      "400 atm^-1",
+      "200 atm^-1",
+      "325 atm^-1",
+      "150 atm^-1",
+      "225 atm^-1",
+      "50 atm^-1",
+      "100 atm^-1",
+      "180 atm^-1",
+      "75 atm^-1",
+      "269.44 atm^-1"
+    ],
+    "answer": "J",
+    "category": "chemistry"
+  },
+  {
+    "question": "A model of an airplane built scale is to be tested in a wind tunnel which operates at a pressure of 20 atmospheres. The airplane is expected to fly at a speed of 500 km/h. At what speed should the wind tunnel operate to give dynamic similarity between model and prototype. The drag measured on the model is 337.5 newtons. What power will be needed to propel the aircraft at 500 km/h.",
+    "choices": [
+      "220 km/hr and 1000 kW",
+      "240 km/hr and 950 kW",
+      "275 km/hr and 975 kW",
+      "260 km/hr and 900 kW",
+      "310 km/hr and 890 kW",
+      "320 km/hr and 800 kW",
+      "300 km/hr and 850 kW",
+      "280 km/hr and 1100 kW",
+      "210 km/hr and 1050 kW",
+      "250 km/hr and 938 kW"
+    ],
+    "answer": "J",
+    "category": "engineering"
+  },
+  {
+    "question": "If the U.S. dollar and Chinese yuan are traded in flexible currency markets which of the following causes an appreciation of the dollar relative to the Chinese yuan?",
+    "choices": [
+      "Rising per capita GDP in China increasing imports from the United States",
+      "Lower per capita GDP in China decreasing imports from the United States",
+      "Rising unemployment rates in the United States",
+      "Higher price levels in the United States relative to China",
+      "Decrease in the American GDP",
+      "Lower interest rates in the United States relative to China",
+      "Growing American preference to consume more Chinese-made goods",
+      "Lower price levels in China relative to the United States"
+    ],
+    "answer": "A",
+    "category": "economics"
+  },
+  {
+    "question": "Solve the equation −17.02 = −2.3y. Check your answer.",
+    "choices": [
+      "−7.4",
+      "14.72",
+      "10.2",
+      "12.5",
+      "7.4",
+      "-10.2",
+      "3.6",
+      "-3.6",
+      "-12.5",
+      "−19.32"
+    ],
+    "answer": "E",
+    "category": "math"
+  },
+  {
+    "question": "(a) What is the acceleration of gravity on the moon's surface, g_m (as compared to the acceleration of gravity on the earth surface,g_e) if the diameter of the moon is one-quarter that of the earth's and its density is two-thirds that of the earth? (b) An astronaut, in his space suit and fully equipped, can jump 2 ft vertically on earth using maximum effort. How high can he jump on the moon?",
+    "choices": [
+      "g_m = (1/6)g_e, 12 ft",
+      "g_m = (1/7)g_e, 16 ft",
+      "g_m = (1/4)g_e, 15 ft",
+      "g_m = (1/3)g_e, 6 ft",
+      "g_m = (1/9)g_e, 18 ft",
+      "g_m = (1/5)g_e, 9 ft",
+      "g_m = (1/2)g_e, 8 ft",
+      "g_m = (1/8)g_e, 14 ft",
+      "g_m = (2/3)g_e, 3 ft",
+      "g_m = (1/4)g_e, 10 ft"
+    ],
+    "answer": "A",
+    "category": "physics"
+  },
+  {
+    "question": "Which of the following is a true statement about the flow of energy in an ecosystem?",
+    "choices": [
+      "Energy is evenly distributed among all organisms in an ecosystem.",
+      "All organisms in an ecosystem receive the same amount of energy.",
+      "Energy transfer between organisms normally involves conservation of heat energy.",
+      "Chemical energy is converted into radiant energy, which is then converted into chemical energy at the next trophic level.",
+      "The amount of energy transferred from one trophic level to the next is constant.",
+      "Energy flow between trophic levels is 100% efficient.",
+      "Smaller organisms need less energy per gram of body weight than do larger organisms.",
+      "Energy is transferred from consumers to producers.",
+      "Energy flow in an ecosystem is cyclical.",
+      "Energy flow between trophic levels is inefficient."
+    ],
+    "answer": "J",
+    "category": "other"
+  },
+  {
+    "question": "Mary Redmond purchased a $28,500 home with 20% down and the balance to be paid by monthly payments over 10 years. In addition, a financing charge of 7% per year of the unpaid balance is to be added to each monthly payment. Calculate the total payment due for the first month.",
+    "choices": [
+      "$305",
+      "$190",
+      "$171",
+      "$285.50",
+      "$399",
+      "$323",
+      "$5700",
+      "$133",
+      "$228",
+      "$256"
+    ],
+    "answer": "F",
+    "category": "business"
+  },
+  {
+    "question": "Data for the vapor pressure, P of a liquid with a normal boiling point of 27°C is given. A plot oflnPvs1/T results in a straight line. Calculate the heat of vapori-zation of the liquid if the straight line extrapolated to infinite temperature yields a pressure of 10^5 atm.",
+    "choices": [
+      "7.855 kcal",
+      "5.5 kcal",
+      "3.985 kcal",
+      "4.2 kcal",
+      "11.2 kcal",
+      "12 kcal",
+      "9.5 kcal",
+      "10 kcal",
+      "6.855 kcal",
+      "8.314 kcal"
+    ],
+    "answer": "I",
+    "category": "chemistry"
+  },
+  {
+    "question": "A mixture of oil (sp. gr. = 0.88) and air consists of drops of oil witha diameter of 3.5 × 10^-5 ft. If a settling time of 90 seconds is allowed, find the maximum height of the chamberrequired for the oil drops to settle. Take density and viscosityof air as 0.075 lb/ft^3 and 1.2 × 10^-5 lb/ft-s respectively.",
+    "choices": [
+      "0.9 ft",
+      "2.0 ft",
+      "1.8 ft",
+      "0.7 ft",
+      "0.6 ft",
+      "1.2 ft",
+      "0.5 ft",
+      "0.8 ft",
+      "1.0 ft",
+      "1.5 ft"
+    ],
+    "answer": "A",
+    "category": "engineering"
+  },
+  {
+    "question": "This question refers to the following information.\nOn Being Brought from Africa to America\n'Twas mercy brought me from my Pagan land,\nTaught my benighted soul to understand\nThat there's a God, that there's a Saviour too;\nOnce I redemption neither sought nor knew.\nSome view our sable race with scornful eye,\n\"Their colour is a diabolic die.\"\nRemember, Christians, Negroes, black as Cain,\nMay be refin'd, and join th' angelic train.\n—Phillis Wheatley, Poems on Various Subjects, Religious and Moral, 1773\nThe point of Wheatley's poem can best be compared to which of the following?",
+    "choices": [
+      "Malcolm X's \"The Ballot or the Bullet\" speech",
+      "Martin Luther King, Jr.'s \"I Have a Dream” speech",
+      "Abraham Lincoln's \"Emancipation Proclamation\"",
+      "The Seneca Falls Declaration of Rights and Sentiments",
+      "Thomas Paine's \"Common Sense\"",
+      "Nelson Mandela's \"I Am Prepared to Die\" speech",
+      "Frederick Douglass's \"What to the Slave is the Fourth of July?\"",
+      "Jonathan Edwards's sermon \"Sinners in the Hands of an Angry God\"",
+      "John F. Kennedy's \"Ich bin ein Berliner\" speech",
+      "The Declaration of Independence"
+    ],
+    "answer": "B",
+    "category": "history"
+  },
+  {
+    "question": "Vinnie wishes to sell an item that cost him $18.20 at a 40% markup based on the selling price. What is his selling price?",
+    "choices": [
+      "$35.50",
+      "$28.16",
+      "$30.33",
+      "$29.00",
+      "$31.90",
+      "$32.52",
+      "$25.46",
+      "$27.30",
+      "$24.28",
+      "$26.74"
+    ],
+    "answer": "C",
+    "category": "business"
+  },
+  {
+    "question": "The possibility that Homo erectus possessed an aesthetic sense and may have created “art” is suggested by:",
+    "choices": [
+      "the discovery of figurines made from clay at the Trinil site.",
+      "recovery of a shell at the Trinil site with an intentionally engraved series of lines.",
+      "the use of complex tools requiring a high level of cognitive function.",
+      "cave paintings and elaborate burials with numerous grave goods at the Trinil site.",
+      "all of the above.",
+      "all of the above except B and D.",
+      "evidence of musical instruments found at the Trinil site.",
+      "their ability to control fire, suggesting a deeper understanding of their environment.",
+      "the construction of elaborate shelters, indicating a sense of design.",
+      "the size of their brains, with a mean brain size slightly larger than modern humans."
+    ],
+    "answer": "B",
+    "category": "history"
+  },
+  {
+    "question": "Why did theinstitutionalistsof the early twentieth century reject laissez-faire?",
+    "choices": [
+      "They held the view that government intervention would reduce economic freedom.",
+      "They were convinced that laissez-faire would ensure equitable wealth distribution.",
+      "They were disturbed by the wide spread poverty and the fluctuations of the business cycle.",
+      "They thought laissez-faire would lead to more efficient and ethical business practices.",
+      "They favored the principles of socialism.",
+      "They believed in the laws of supply and demand.",
+      "They were satisfied with the state of the economy.",
+      "They believed laissez-faire policies would prevent economic crises.",
+      "They felt that laissez-faire would naturally eliminate corruption and monopolies.",
+      "They were proponents of complete government control over the economy."
+    ],
+    "answer": "C",
+    "category": "economics"
+  },
+  {
+    "question": "Believing she was pregnant, a woman went to see a doctor, a licensed gynecologist, because she wanted an abortion. The doctor examined her and determined that she was not pregnant, but decided that he would tell her she was, in order to earn his $500 fee. After receiving the $500, the doctor proceeded to have the woman admitted to a hospital by falsely informing the hospital authorities that she had a benign tumor on her uterus, which he was going to remove. He performed all the surgical procedures appropriate for an abortion under adequate hygienic conditions, but the woman began hemorrhaging and died. The doctor should be found guilty of",
+    "choices": [
+      "murder and false pretenses.",
+      "battery and larceny by trick.",
+      "murder and larceny by trick.",
+      "manslaughter and larceny by trick.",
+      "manslaughter, battery, and false pretenses.",
+      "murder, manslaughter, and larceny by trick.",
+      "murder, battery, and false pretenses.",
+      "manslaughter and false pretenses.",
+      "battery, manslaughter, and larceny by trick.",
+      "battery and false pretenses."
+    ],
+    "answer": "H",
+    "category": "law"
+  },
+  {
+    "question": "Cancer cells grown in culture are similar to normal cells grown in culture in that they",
+    "choices": [
+      "do not have the ability to metastasize",
+      "divide an indefinite number of times",
+      "undergo programmed cell death",
+      "can grow without a nutrient supply",
+      "do not require oxygen to survive",
+      "proliferate to the same cell density",
+      "are able to repair DNA damage efficiently",
+      "are not susceptible to mutations",
+      "require a surface for attachment in order to grow",
+      "do not display contact inhibition"
+    ],
+    "answer": "I",
+    "category": "biology"
+  },
+  {
+    "question": "The Space Shuttle orbits 300 km above the Earth’s surface; the Earth’s radius is 6400 km. What is the acceleration due to Earth’s gravity experienced by the Space Shuttle?",
+    "choices": [
+      "7.9 m/s^2",
+      "8.9 m/s^2",
+      "3.9 m/s^2",
+      "10.8 m/s^2",
+      "11.8 m/s^2",
+      "4.9 m/s^2",
+      "5.9 m/s^2",
+      "6.9 m/s^2",
+      "12.8 m/s^2",
+      "9.8 m/s^2"
+    ],
+    "answer": "B",
+    "category": "physics"
+  },
+  {
+    "question": "When was the current Dalai Lama born?",
+    "choices": [
+      "1955",
+      "1985",
+      "1975",
+      "1990",
+      "2000",
+      "1965",
+      "1900",
+      "1925",
+      "1940",
+      "1935"
+    ],
+    "answer": "J",
+    "category": "philosophy"
+  },
+  {
+    "question": "A government entity is required to include a statement of cash flows in which of the following financial statements?",
+    "choices": [
+      "Corporate financial statements.",
+      "Governmental fund financial statements.",
+      "Fiduciary fund financial statements.",
+      "Pension fund financial statements.",
+      "Municipal bond financial statements.",
+      "Private company financial statements.",
+      "Non-profit organization financial statements.",
+      "Government-wide financial statements.",
+      "Proprietary fund financial statements.",
+      "Public school financial statements."
+    ],
+    "answer": "I",
+    "category": "other"
+  },
+  {
+    "question": "A biology student observes filamentous appendages on a bacterium and concludes they are flagella. However, he is told that the bacterium is non-motile. He therefore concludes that the flagella are non-operational. Why are both ofhis conclusions incorrect?",
+    "choices": [
+      "The appendages are actually cilia",
+      "The appendages are vestigial structures from an evolutionary ancestor",
+      "The filamentous appendages are not flagella, but pili (or fimbriae).",
+      "The student is observing a form of spore or reproductive structure, not related to motility",
+      "The appendages are microvilli used for adhesion or nutrient absorption, not movement",
+      "The bacterium is actually motile",
+      "The bacterium uses a different method of motility not involving flagella",
+      "The appendages are flagella but they are non-functional",
+      "The appendages are a form of sensory organelles, not involved in movement",
+      "The flagella are operational, but the bacterium is in a dormant state"
+    ],
+    "answer": "C",
+    "category": "biology"
+  },
+  {
+    "question": "In Chord, assume the size of the identifier space is 16. The active nodes are N3, N6, N8 and N12. Show all the target key (in ascending order, ignore the node's identifier itself) for N6.",
+    "choices": [
+      "[7, 10, 13, 14]",
+      "[7, 9, 12, 15]",
+      "[7, 8, 10, 14]",
+      "[7, 8, 12, 14]",
+      "[7, 9, 11, 13]",
+      "[6, 8, 10, 14]",
+      "[6, 7, 9, 11]",
+      "[8, 9, 11, 13]",
+      "[3, 6, 8, 12]",
+      "[8, 10, 12, 14]"
+    ],
+    "answer": "C",
+    "category": "computer science"
+  },
+  {
+    "question": "A 5-kva transformer has a nominal voltage rating of 1,100/110 volts. With the low-voltage winding short-circuited, it is found by experiment that 33 volts is required to circulate rated full-load current, and the corresponding power input is 85 watts. Find the percent regulation when the load takes rated current at a power factor of 80 percent, lagging.",
+    "choices": [
+      "1.25%",
+      "5.00%",
+      "2.45%",
+      "4.85%",
+      "3.25%",
+      "3.85%",
+      "2.10%",
+      "2.85%",
+      "4.15%",
+      "1.85%"
+    ],
+    "answer": "H",
+    "category": "engineering"
+  },
+  {
+    "question": "ABC Corporation had a 1976 net income of $1,000,000. If ABC pays 50% taxes, what was its income before taxes?",
+    "choices": [
+      "$2,250,000",
+      "$2,750,000",
+      "$2,000,000",
+      "$1,200,000",
+      "$3,000,000",
+      "$2,500,000",
+      "$1,500,000",
+      "$1,750,000",
+      "$1,250,000",
+      "$1,000,000"
+    ],
+    "answer": "C",
+    "category": "business"
+  },
+  {
+    "question": "Which of these is a type of a artwork consisting of pieces of wood inlaid in geometric patterns?",
+    "choices": [
+      "harquetry",
+      "marquetry",
+      "jarquetry",
+      "zarquetry",
+      "parquetry",
+      "rarquetry",
+      "tarquetry",
+      "sharquetry",
+      "larquetry",
+      "carquetry"
+    ],
+    "answer": "E",
+    "category": "other"
+  },
+  {
+    "question": "In an industrial country, capital is abundant. In a rural country, land is abundant. If these two countries trade, each specializing in the good it has a comparative advan-tage in, what will happen to the prices of the resources (capital and land) in the two countries?",
+    "choices": [
+      "Resource prices will become unpredictable in both countries",
+      "The price of capital will decrease in both countries, while the price of land will increase in both countries",
+      "Resource prices will decrease in the industrial country and increase in the rural country",
+      "Resource prices will increase in the industrial country and decrease in the rural country",
+      "The price of land will increase in the industrial country, and the price of capital will increase in the rural country",
+      "Resource prices tend to equalize in the two countries",
+      "The price of land will decrease in both countries, while the price of capital will increase in both countries",
+      "Resource prices will remain the same in both countries",
+      "Resource prices will decrease in both countries",
+      "Resource prices will increase in both countries"
+    ],
+    "answer": "F",
+    "category": "economics"
+  },
+  {
+    "question": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nP ⊃ (Q ∨ R)\n(Q · S) ⊃ ~P\n~(~Q ∨ R) / ~P",
+    "choices": [
+      "Invalid. Counterexample when P, Q, R, and S are true",
+      "Valid",
+      "Valid. No counterexamples exist",
+      "Invalid. Counterexample when P and R are true and Q and S are false",
+      "Invalid. Counterexample when P is true, Q, R, and S are false",
+      "Invalid. Counterexample when P and Q are true and R and S are false",
+      "Invalid. Counterexample when P is false, Q, R, and S are true",
+      "Invalid. Counterexample when P, R, and S are true and Q is false",
+      "Invalid. Counterexample when P and S are true and Q and R are false"
+    ],
+    "answer": "F",
+    "category": "philosophy"
+  },
+  {
+    "question": "Statement 1| The set of all rectangles in the 2D plane (which includes non axisaligned rectangles) can shatter a set of 5 points. Statement 2| The VC-dimension of k-Nearest Neighbour classifier when k = 1 is infinite.",
+    "choices": [
+      "True, True",
+      "False, True",
+      "Depends on the dataset, True",
+      "False, Depends on the dataset",
+      "Depends on the dataset, Depends on the dataset",
+      "True, Depends on the dataset",
+      "True, False",
+      "False, False",
+      "Depends on the dataset, False",
+      "True, Not enough information"
+    ],
+    "answer": "A",
+    "category": "computer science"
+  },
+  {
+    "question": "Electroconvulsive therapy (ECT) is most successfully used with",
+    "choices": [
+      "dissociative identity disorder",
+      "psychogenic amnesia",
+      "antisocial personality disorder",
+      "obsessive-compulsive personality disorder",
+      "autism spectrum disorder",
+      "delusional depression",
+      "attention deficit hyperactivity disorder (ADHD)",
+      "catatonic schizophrenia",
+      "bipolar disorder",
+      "generalized anxiety disorder"
+    ],
+    "answer": "F",
+    "category": "psychology"
+  },
+  {
+    "question": "The ________ School of jurisprudence believes that the law is an aggregate of social traditions and customs that have developed over the centuries.",
+    "choices": [
+      "Command",
+      "Sociological",
+      "Historical",
+      "Interpretive",
+      "Analytical",
+      "Natural",
+      "Functional",
+      "Positivist",
+      "Realist",
+      "Pragmatic"
+    ],
+    "answer": "C",
+    "category": "law"
+  },
+  {
+    "question": "Evaluate $\\log_3 81$.",
+    "choices": [
+      "9",
+      "-1",
+      "0.25",
+      "2",
+      "4",
+      "-4",
+      "81",
+      "3",
+      "27",
+      "0.75"
+    ],
+    "answer": "E",
+    "category": "math"
+  },
+  {
+    "question": "Answering multiple-choice questions is often easier than answering fill-in or completion questions, because multiple choice questions",
+    "choices": [
+      "are definitional rather than conceptual",
+      "check memorization rather than critical thinking",
+      "encourage rote learning rather than comprehension",
+      "require less time to answer",
+      "enhance retention of information",
+      "provide more retrieval cues",
+      "are always easier to understand"
+    ],
+    "answer": "F",
+    "category": "psychology"
+  },
+  {
+    "question": "A student made three successiveweighingsof an object as follows: 9.17 g, 9.15 g, and 9.20 g. What is the average weight of the object in milligrams?",
+    "choices": [
+      "9180 mg",
+      "9150 mg",
+      "9200 mg",
+      "9135 mg",
+      "9155 mg",
+      "9190 mg",
+      "9145 mg",
+      "30650 mg",
+      "27520 mg",
+      "9170 mg"
+    ],
+    "answer": "J",
+    "category": "chemistry"
+  },
+  {
+    "question": "Monopoly deadweight loss is the result of",
+    "choices": [
+      "monopoly output being less than the competitive output.",
+      "setting the price below average total cost.",
+      "short-run abnormal profits.",
+      "monopoly output being greater than the competitive output.",
+      "long-run abnormal profits.",
+      "setting the price below marginal cost.",
+      "long-run normal profits.",
+      "setting the price equal to average total cost.",
+      "setting the price above average total cost.",
+      "setting the price above marginal cost."
+    ],
+    "answer": "J",
+    "category": "economics"
+  },
+  {
+    "question": "An employee wdrked as a delivery person for a drugstore. As part of the employee's duties and responsibilities, he would regularly deliver prescriptions and other items (such as toiletries, cosmetics, vitamins, and gift products) to customers. One afternoon while the employee was on duty, he remembered that it was his girlfriend's birthday. He went ahead and bought her a bottle of perfume from the pharmacy's cosmetics department. The employee paid the full price of $79. 95 for the perfume and had the perfume gift wrapped. He then drove to the girlfriend's house in the company van to personally deliver the birthday present. This trip took place during the employee's regular working hours while he was en route to make another delivery from his van. As he was traveling to the girlfriend's house, he was in such a hurry that he drove through a red light and collided with a vehicle owned and operated by a driver. The driver, who had entered the intersection on the green light, tried unsuccessfully to swerve and stop but was unable to avoid the employee's vehicle. The driver was injured in the accident, which caused extensive damage to both vehicles. If the driver brings suit against the drugstore to recover damages arising from the accident, the driver will probably",
+    "choices": [
+      "prevail, because the employee was using the company van at the time of the accident.",
+      "not prevail, because the employee paid for the perfume with his own money.",
+      "prevail, because the driver had the right of way at the time of the accident.",
+      "prevail, because the employee was under the control and direction of the drugstore at the time of the accident.",
+      "not prevail, because the employee was personally responsible for the accident.",
+      "not prevail, because the drugstore did not directly cause the accident.",
+      "not prevail, because the drugstore was not negligent in hiring the employee.",
+      "prevail, because the employee was on duty at the time of the accident.",
+      "not prevail, because the employee was acting outside the scope of the employment relationship at the time of the accident.",
+      "prevail, because the employee paid for the perfume."
+    ],
+    "answer": "D",
+    "category": "law"
+  },
+  {
+    "question": "A sample of oxygen gas at 50 °C is heated, reaching a final temperature of 100 °C. Which statement best describes the behavior of the gas molecules?",
+    "choices": [
+      "The number of molecules decreases by half.",
+      "Their velocity remains the same.",
+      "Their velocity decreases by a factor of two.",
+      "The number of molecules doubles.",
+      "Their kinetic energy remains the same.",
+      "Their velocity increases by a factor of two.",
+      "Their kinetic energy increases by a factor of less than 2.",
+      "Their kinetic energy decreases.",
+      "Their velocity increases by a factor of four.",
+      "Their kinetic energy increases by a factor of 2."
+    ],
+    "answer": "G",
+    "category": "chemistry"
+  },
+  {
+    "question": "There are 2,817 homes in the town of West Valley. Each home uses an average of 380 gallons of water each day. Use the expression below to find the total number of gallons of water the homes in West Valley use on average each day. 2,817 × 380 What is the total number of gallons of water the homes in West Valley use on average each day?",
+    "choices": [
+      "860,460 gallons",
+      "1,060,460 gallons",
+      "1,150,460 gallons",
+      "1,070,460 gallons",
+      "870,460 gallons",
+      "900,460 gallons",
+      "980,460 gallons",
+      "1,080,460 gallons",
+      "1,090,460 gallons",
+      "1,100,460 gallons"
+    ],
+    "answer": "D",
+    "category": "math"
+  },
+  {
+    "question": "Body temperature on the average is 98.6°F. What is thison (a)theCelsius scale and (b) the Kelvin scale?",
+    "choices": [
+      "37.00°C, 310.15K",
+      "37.50°C, 311.65K",
+      "38.50°C, 311.65K",
+      "36.50°C, 309.65K",
+      "35.00°C, 308.15K",
+      "36.00°C, 300.15K",
+      "38.00°C, 320.15K",
+      "39.00°C, 330.15K",
+      "34.00°C, 307.15K",
+      "40.00°C, 313.15K"
+    ],
+    "answer": "A",
+    "category": "chemistry"
+  },
+  {
+    "question": "A chef owned a summer cottage on the lake. In order to facilitate the access to the cottage, the chef entered into an agreement with a neighbor, an adjoining land owner, whereby the neighbor, in writing, granted the chef a right-of-way over a strip of land 30 feet in width and a quarter of a mile in length along the eastern margin of the neighbor's property. Without notifying the neighbor, the chef proceeded to improve the roadbed by having the road asphalted in order to make it more accessible for motor vehicle traffic. Several years later, the neighbor started a sand business, which required him to do heavy hauling that subsequently destroyed the asphalted surface on the road. Ten years after the neighbor started his sand business, the chef sold his lakefront property to his assistant. Shortly after the assistant took possession of the cottage and property, the neighbor erected wooden barriers across the roadway, thus obstructing the access to the assistant's property. The assistant's strongest argument in an action against the neighbor for removal of the barriers, which are obstructing his access to the property, would be that",
+    "choices": [
+      "the neighbor's sand business constitutes a misuse of the easement.",
+      "the chef's improvements to the roadbed grant him additional rights to the easement.",
+      "the chef and the assistant, being in privity of estate, could \"tack on\" their successive use periods.",
+      "an easement appurtenant is alienable in that any conveyance transferring possession of the dominant tenement also passes the easement privilege.",
+      "the assistant, as a bonafide purchaser, is protected from the neighbor's obstruction, even though the easement was unrecorded.",
+      "because the easement was created by implication, the chef's prior and continuous use gave rise to a prescriptive easement.",
+      "the assistant has a legal right to improve the easement for his own use.",
+      "the assistant is entitled to compensation for the damage caused by the neighbor's sand business.",
+      "the assistant can claim ownership of the easement due to his long-term use of the property."
+    ],
+    "answer": "D",
+    "category": "law"
+  },
+  {
+    "question": "A force of 0.20newtonacts on a mass of 100 grams. What is the acceleration?",
+    "choices": [
+      "5.0 m/sec^2",
+      "1.0 m/sec^2",
+      "2.0 m/sec^2",
+      "3.0 m/sec^2",
+      "4.0 m/sec^2",
+      "0.2 m/sec^2",
+      "1.5 m/sec^2",
+      "10.0 m/sec^2",
+      "0.5 m/sec^2",
+      "2.5 m/sec^2"
+    ],
+    "answer": "C",
+    "category": "physics"
+  },
+  {
+    "question": "The Daily Beetle has a circulation of 400,000. If the newspaper'srate is $1.20 per agate line, find themillinerate.",
+    "choices": [
+      "$5.00",
+      "$2.50",
+      "$1.80",
+      "$2.80",
+      "$1.20",
+      "$6.00",
+      "$3.00",
+      "$4.00",
+      "$3.50",
+      "$4.50"
+    ],
+    "answer": "G",
+    "category": "business"
+  },
+  {
+    "question": "A particular substance has the following solid, liquid and gas heatcapacities: Solid (for T \\leq 25°K);C_p = 0.8T cal deg^-1 mole^-1 From 25°K \\rightarrow 250°K (melting point); C_p = 0.007T + 0.0006T^2 cal deg^-1 mole^-1 Liquid;C_p = 18 + 0.007T cal deg^-1 mole^-1 Gas @ 1atm(above 360°K which is the boiling point); C_p = 15 cal deg^-1 mole^-1 The heat of fusion is2,000 cal/moleand the heat of vaporizationis 6,850 cal/mole. Calculate the entropy @ 400°K and 0.7 atm.",
+    "choices": [
+      "74.92eu",
+      "76.05eu",
+      "75.36eu",
+      "78.12eu",
+      "77.46eu",
+      "72.81eu",
+      "77.89eu",
+      "76.76eu",
+      "75.98eu",
+      "73.58eu"
+    ],
+    "answer": "H",
+    "category": "engineering"
+  },
+  {
+    "question": "A cylindrical tank of height 4 m and radius 1 m is filled with water. Water drains through a square hole of side 2 cm in the bottom. How long does it take for the tank to go from full to empty?",
+    "choices": [
+      "5000",
+      "3200",
+      "8500",
+      "5500",
+      "9800",
+      "7142",
+      "7600",
+      "3750",
+      "6500",
+      "4500"
+    ],
+    "answer": "F",
+    "category": "math"
+  },
+  {
+    "question": "_______, where actors are convinced that their actions harms nobody, _______ where actors argue that their norm violation is an attempt to realize higher-order values and ________ , where actors argue they are owed something, are all strategies for justifying or denying unethical behaviour.",
+    "choices": [
+      "Appeal to higher loyalties, Metaphor of the ledger, Denial of injury",
+      "Denial of injury, Metaphor of the ledger, Appeal to higher loyalties,",
+      "Denial of injury, Metaphor of the balance, Appeal to higher loyalties",
+      "Metaphor of the ledger, Denial of injury, Appeal to higher loyalties",
+      "Denial of responsibility, Metaphor of the ledger, Appeal to higher loyalties",
+      "Appeal to higher loyalties, Denial of injury, Metaphor of the ledger",
+      "Denial of victim, Appeal to higher loyalties, Metaphor of the ledger",
+      "Appeal to higher loyalties, Denial of responsibility, Metaphor of the ledger",
+      "Metaphor of the ledger, Denial of victim, Appeal to higher loyalties",
+      "Denial of injury, Appeal to higher loyalties, Metaphor of the ledger"
+    ],
+    "answer": "J",
+    "category": "business"
+  },
+  {
+    "question": "When a good is taxed, the tax burden falls mainly on the consumer if",
+    "choices": [
+      "both demand and supply are perfectly elastic",
+      "the demand is elastic and the supply is inelastic",
+      "the demand is elastic and the supply is elastic",
+      "the demand is perfectly elastic and the supply is inelastic",
+      "the demand is unitary elastic and the supply is elastic",
+      "both demand and supply are perfectly inelastic",
+      "the demand is inelastic and the supply is elastic",
+      "the demand is inelastic and the supply is inelastic",
+      "the demand is perfectly inelastic and the supply is perfectly elastic",
+      "the demand is elastic and the supply is unitary elastic"
+    ],
+    "answer": "G",
+    "category": "economics"
+  },
+  {
+    "question": "What have been the results of studies which investigated the tip-of-the-tongue(TOT) state?",
+    "choices": [
+      "People in TOT state cannot recall any characteristics of the target word.",
+      "The TOT state is exclusively linked to the recall of proper nouns.",
+      "Age is an irrelevant factor in the frequency of TOT occurrences.",
+      "People use semantic and phonetic characteristics associated with a word for the retrieval process in memory.",
+      "The TOT state typically resolves without the individual recalling the target word.",
+      "The TOT state is an indication of memory loss.",
+      "Individuals can recall only the first letter of the target word during TOT.",
+      "TOT is more common in individuals with a limited vocabulary.",
+      "Only phonetic characteristics help in memory retrieval."
+    ],
+    "answer": "D",
+    "category": "psychology"
+  },
+  {
+    "question": "Which author emphasised strategy as achieving competitive advantage for an organization?",
+    "choices": [
+      "Steyn (2003)",
+      "Gregory (2006)",
+      "Cutlip et al (2006)",
+      "Henry (2006)"
+    ],
+    "answer": "D",
+    "category": "other"
+  },
+  {
+    "question": "A gun is fired at a moving target. The bullet has a pro-jectile speed of 1200 ft/sec. Both gun and target are on level ground. The target is moving 60 mph away from the gun and it is 30,000 ft from the gun at the moment of firing. Determine the angle of elevation \\texttheta needed for a direct hit.",
+    "choices": [
+      "25 degrees",
+      "32 degrees",
+      "15 degrees",
+      "34.2 degrees",
+      "21.3 degrees",
+      "20 degrees",
+      "27.5 degrees",
+      "18.7 degrees",
+      "23.4 degrees",
+      "30 degrees"
+    ],
+    "answer": "I",
+    "category": "physics"
+  },
+  {
+    "question": "A bedroom set with a cash value of $720 can be purchased on the installment plan for 18 monthly payments of $47.20 each. What is the annual interest rate?",
+    "choices": [
+      "21%",
+      "16.8%",
+      "24%",
+      "15%",
+      "25%",
+      "19.5%",
+      "20%",
+      "18%",
+      "23.5%",
+      "22.7%"
+    ],
+    "answer": "J",
+    "category": "business"
+  },
+  {
+    "question": "What is the name of the lithic technology seen in the Arctic and consisting of wedge-shaped cores, micro-blades, bifacial knives, and burins?",
+    "choices": [
+      "Ahrensburg Complex",
+      "Solutrean Complex",
+      "Aurignacian Complex",
+      "Nenana Complex",
+      "Gravettian Complex",
+      "Clovis Complex",
+      "Denali Complex",
+      "Mousterian Complex",
+      "Magdalenian Complex",
+      "Folsom Complex"
+    ],
+    "answer": "G",
+    "category": "history"
+  },
+  {
+    "question": "From the table below select the required bore size of a cylindricalroller bearing (N3 series) if, (1)itsupports an equivalent load of 4000 lbs. and has to last forat least 2.0 million revolutions. (2)itsupports a total load of 6000 lbs. (5000 lbs. of radial and1000 lbs. of thrust) and has to last for at least 85 hrs. runningat 850 rpm.",
+    "choices": [
+      "Bore number 07 and bore number 09",
+      "Bore number 04 and bore number 06",
+      "Bore number 06 and bore number 08",
+      "Bore number 05 and bore number 07"
+    ],
+    "answer": "D",
+    "category": "engineering"
+  },
+  {
+    "question": "Newton's rings are seen in transmitted light of 500 nm. The diameter of the 20th bright ring is found to be 4 mm. a) What is the radius of curvature of the lens? b) What is the diameter of the 30th bright ring?",
+    "choices": [
+      "Radius of curvature of the lens is 50 cm and diameter of the 30th bright ring is 6.0 mm",
+      "Radius of curvature of the lens is 35 cm and diameter of the 30th bright ring is 4.9 mm",
+      "Radius of curvature of the lens is 39 cm and diameter of the 30th bright ring is 5.5 mm",
+      "Radius of curvature of the lens is 48 cm and diameter of the 30th bright ring is 5.1 mm",
+      "Radius of curvature of the lens is 35 cm and diameter of the 30th bright ring is 6.2 mm",
+      "Radius of curvature of the lens is 45 cm and diameter of the 30th bright ring is 6.5 mm",
+      "Radius of curvature of the lens is 39 cm and diameter of the 30th bright ring is 4.9 mm",
+      "Radius of curvature of the lens is 45 cm and diameter of the 30th bright ring is 5.2 mm",
+      "Radius of curvature of the lens is 30 cm and diameter of the 30th bright ring is 5.8 mm",
+      "Radius of curvature of the lens is 42 cm and diameter of the 30th bright ring is 5.0 mm"
+    ],
+    "answer": "G",
+    "category": "physics"
+  },
+  {
+    "question": "Anscombe criticizes Sidgwick on the grounds that:",
+    "choices": [
+      "he supports the principle of consequentialism.",
+      "he endorses the divine law conception of ethics.",
+      "he claims that there is a “natural balance” to the universe.",
+      "he does not believe in the principle of double effect.",
+      "all of the above.",
+      "he neglects the role of emotions in ethical decision-making.",
+      "he fails to account for the role of virtue in ethics.",
+      "he does not distinguish between the foreseen and intended consequences of one’s action.",
+      "he argues that morality is subjective.",
+      "he overlooks the importance of individual intention in moral actions."
+    ],
+    "answer": "H",
+    "category": "philosophy"
+  },
+  {
+    "question": "Select the best translation into predicate logic. Marco doesn't move from Spain to Italy. (i: Italy; m: Marco; s: Spain; Mxyz: x moves to y from z)",
+    "choices": [
+      "~Mis",
+      "Msi~",
+      "M~ism",
+      "~Mmis",
+      "M~mis",
+      "~Mmsi",
+      "M~si",
+      "M~msi",
+      "Mims~"
+    ],
+    "answer": "D",
+    "category": "philosophy"
+  },
+  {
+    "question": "At the birthday party of your best friend, you see Skylar help himself to a second piece of cake. For this individual, it must be the case that",
+    "choices": [
+      "the marginal benefit of the second piece of cake is less than the marginal cost.",
+      "the total benefit received from eating cake is falling.",
+      "the ratio of marginal benefit over marginal cost is less than one.",
+      "the marginal benefit of the second piece of cake is greater than the marginal cost."
+    ],
+    "answer": "D",
+    "category": "economics"
+  },
+  {
+    "question": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "choices": [
+      "Left masseter muscle",
+      "Right buccinator muscle",
+      "Right temporalis muscle",
+      "Right masseter muscle",
+      "Right lateral pterygoid muscle",
+      "Left medial pterygoid muscle",
+      "Left temporalis muscle",
+      "Left buccinator muscle",
+      "Left lateral pterygoid muscle",
+      "Right medial pterygoid muscle"
+    ],
+    "answer": "I",
+    "category": "health"
+  },
+  {
+    "question": "The element (4, 2) of Z_12 x Z_8 has order",
+    "choices": [
+      "2",
+      "9",
+      "4",
+      "5",
+      "8",
+      "7",
+      "12",
+      "6",
+      "3",
+      "10"
+    ],
+    "answer": "G",
+    "category": "math"
+  },
+  {
+    "question": "Discuss cognitive development during adolescence as describedby Piaget.",
+    "choices": [
+      "The stage of formal operations begins at about the age of 11 when the child begins to think abstractly, hypothetically, and idealistically.",
+      "Cognitive development peaks in early adolescence and declines thereafter.",
+      "Cognitive development during adolescence is marked by a return to sensory-motor thinking.",
+      "Cognitive development begins in adolescence.",
+      "Cognitive development ends with the stage of formal operations.",
+      "Adolescents revert to egocentric thinking patterns that are typical of early childhood.",
+      "The stage of formal operations is only reached by a minority of individuals, with most never advancing beyond concrete operations.",
+      "The stage of formal operations is achieved by all individuals by the age of 8.",
+      "Cognitive development is characterized by the ability to deal with concrete situations.",
+      "Adolescents primarily focus on developing practical skills rather than abstract thinking."
+    ],
+    "answer": "A",
+    "category": "psychology"
+  },
+  {
+    "question": "Which of the following is true of mutation-based fuzzing?",
+    "choices": [
+      "It only works for network-based fuzzing, not file-based fuzzing",
+      "It modifies the target program's code to test its robustness",
+      "It requires an initial error-free program to start the process",
+      "It uses a random number generator to create new inputs",
+      "It uses a fixed set of inputs to test the program",
+      "It works by making small mutations to the target program to induce faults",
+      "Each input is mutation that follows a given grammar",
+      "It generates each different input by modifying a prior input",
+      "It only makes sense for file-based fuzzing, not network-based fuzzing",
+      "It creates a completely new input for each test"
+    ],
+    "answer": "H",
+    "category": "computer science"
+  },
+  {
+    "question": "Which of the following is not one of the potentially negative consequences of imposing the death penalty?",
+    "choices": [
+      "the execution of innocent persons",
+      "the diminishing of state moral authority",
+      "the creation of martyrs",
+      "the inequality of application across social classes",
+      "the incitement effect",
+      "the emotional trauma for the executioners",
+      "the promotion of a culture of violence",
+      "great financial cost",
+      "the prevention of future murders"
+    ],
+    "answer": "I",
+    "category": "philosophy"
+  },
+  {
+    "question": "The secondarily altricial condition of modern human babies may have been an evolutionary solution, in that:",
+    "choices": [
+      "it resulted in babies being born with fully formed teeth.",
+      "it allowed for subsequent growth of the brain, since bipedalism had resulted in a narrowed birth canal in the female pelvis.",
+      "it led to an increase in the size of the newborn's head, allowing for a larger brain.",
+      "the brain size of hominids had not grown for more than a million years, making it difficult for babies to walk.",
+      "it allowed babies to be born with an instinctive ability to swim.",
+      "it allowed for an earlier development of language skills in babies.",
+      "it allowed for bipedalism and independence from the mother at an earlier age.",
+      "it allowed for growth of the brain to nearly adult size prior to birth, since bipedalism had resulted in a wider birth canal in the female pelvis.",
+      "it allowed for the development of advanced motor skills at an earlier age.",
+      "it led to an increase in the gestation period allowing for the brain to fully develop before birth."
+    ],
+    "answer": "B",
+    "category": "history"
+  },
+  {
+    "question": "A curling stone of mass 1 slug is sent off along the ice and comes to rest after 100 ft. If the force of kinetic friction between stone and ice is 1/2 lb, with what velocity did the stone start, and how long did it take to come to rest?",
+    "choices": [
+      "Initial velocity: 10 ft/s, Time of motion: 20 s",
+      "Initial velocity: 18 ft/s, Time of motion: 36 s",
+      "Initial velocity: 8 ft/s, Time of motion: 25 s",
+      "Initial velocity: 22 ft/s, Time of motion: 44 s",
+      "Initial velocity: 30 ft/s, Time of motion: 60 s",
+      "Initial velocity: 15 ft/s, Time of motion: 30 s",
+      "Initial velocity: 12 ft/s, Time of motion: 24 s",
+      "Initial velocity: 20 ft/s, Time of motion: 10 s",
+      "Initial velocity: 5 ft/s, Time of motion: 40 s",
+      "Initial velocity: 25 ft/s, Time of motion: 50 s"
+    ],
+    "answer": "A",
+    "category": "physics"
+  },
+  {
+    "question": "The ________ perspective on sustainability resulted from growth models that analysed the carrying capacity of the planet, overall concluding that the finite capacity of the earth and_______, ________ and _______ by current and past generations could reduce quality of life for future generations. This contrasts with the environmental perspective with focuses on the need to maintain and preserve the natural environment.",
+    "choices": [
+      "Environmental, Overuse of resources, Underpopulation, Sustainable practices",
+      "Environmental, Underuse of resources, Overpopulation, Over pollution",
+      "Sociopolitical, Underuse of resources, Overpopulation, Unsustainability",
+      "Economic, Balanced use of resources, Stable population, Sustainable practices",
+      "Environmental, Overuse of resources, Underpopulation, Unsustainability",
+      "Sociopolitical, Overuse of resources, Overpopulation, Over pollution",
+      "Economic, Overuse of resources, Overpopulation, Over pollution,",
+      "Economic, Overuse of resources, Stable population, Over pollution",
+      "Environmental, Balanced use of resources, Overpopulation, Unsustainability",
+      "Economic, Underuse of resources, Underpopulation, Unsustainability"
+    ],
+    "answer": "B",
+    "category": "business"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "description": "Final composite result set for the paper, combining the baseline formal run with endpoint-specific reruns.",
+  "selection": [
+    {
+      "model_key": "gpt-5.4",
+      "endpoint": "api",
+      "source_run": "formal_main_v1"
+    },
+    {
+      "model_key": "gpt-5.4",
+      "endpoint": "app",
+      "source_run": "formal_main_v1"
+    },
+    {
+      "model_key": "gpt-5.4",
+      "endpoint": "shadow",
+      "source_run": "formal_shadow_rerun_v1"
+    },
+    {
+      "model_key": "claude-sonnet-4-6",
+      "endpoint": "api",
+      "source_run": "formal_main_v1"
+    },
+    {
+      "model_key": "claude-sonnet-4-6",
+      "endpoint": "app",
+      "source_run": "formal_claude_app_max20_v1"
+    },
+    {
+      "model_key": "claude-sonnet-4-6",
+      "endpoint": "shadow",
+      "source_run": "formal_shadow_rerun_v1"
+    },
+    {
+      "model_key": "gemini-3-flash",
+      "endpoint": "api",
+      "source_run": "formal_gemini_api_vertex_v1"
+    },
+    {
+      "model_key": "gemini-3-flash",
+      "endpoint": "app",
+      "source_run": "formal_main_v1"
+    },
+    {
+      "model_key": "gemini-3-flash",
+      "endpoint": "shadow",
+      "source_run": "formal_shadow_rerun_v1"
+    }
+  ]
+}

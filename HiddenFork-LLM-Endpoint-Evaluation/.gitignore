@@ -1,0 +1,34 @@
+# Secrets and local environment
+.env
+.env.*
+*.key
+*.pem
+
+# Browser/session state - never publish cookies or login sessions
+playwright_state/
+*_profile/
+*.storageState.json
+
+# Large or local-only experiment artifacts
+logs/
+results/runs/
+results/legacy_archive_20260322/
+audit/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Generated office temp files
+~$*.docx
+~$*.pptx
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/

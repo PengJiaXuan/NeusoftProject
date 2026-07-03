@@ -1,0 +1,4 @@
+model_key,source_run_shadow,ar_reasoning,ar_domain,ar_mmlu_pro,ar_safety,ar_macro,profile
+gpt-5.4,formal_shadow_rerun_v1,0.336538,2.0,0.0,,0.778846,Mixed
+claude-sonnet-4-6,formal_shadow_rerun_v1,1.382353,7.0,0.166667,1.0,2.387255,Mixed
+gemini-3-flash,formal_shadow_rerun_v1,115.666667,3.0,3.0,0.25,30.479167,Substituter

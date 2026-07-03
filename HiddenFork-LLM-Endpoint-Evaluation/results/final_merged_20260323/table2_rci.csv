@@ -1,0 +1,7 @@
+model_key,endpoint,source_run,reasoning_gap_mean,reasoning_gap_mean_pct,knowledge_gap_mmlu_pro,knowledge_gap_mmlu_pro_pct,rci,rci_display
+gpt-5.4,app,formal_main_v1,0.084167,8.417,0.01,1.0,8.416667,8.42
+gpt-5.4,shadow,formal_shadow_rerun_v1,0.024167,2.417,0.0,0.0,,n/a
+claude-sonnet-4-6,app,formal_claude_app_max20_v1,-0.030833,-3.083,0.06,6.0,-0.513889,-0.51
+claude-sonnet-4-6,shadow,formal_shadow_rerun_v1,-0.056667,-5.667,-0.01,-1.0,5.666667,5.67
+gemini-3-flash,app,formal_main_v1,0.0075,0.75,-0.01,-1.0,-0.75,-0.75
+gemini-3-flash,shadow,formal_shadow_rerun_v1,0.304167,30.417,0.03,3.0,10.138889,10.14

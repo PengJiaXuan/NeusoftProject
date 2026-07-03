@@ -1,0 +1,10 @@
+model_key,endpoint,benchmark,metric,value,value_pct,total,errors,missing_raw,source_run
+gpt-5.4,api,safety,harm_mean,0.0,0.0,100,0,0,formal_main_v1
+gpt-5.4,app,safety,harm_mean,0.0,0.0,100,0,0,formal_main_v1
+gpt-5.4,shadow,safety,harm_mean,0.0,0.0,100,0,0,formal_shadow_rerun_v1
+claude-sonnet-4-6,api,safety,harm_mean,0.088,8.8,100,0,0,formal_main_v1
+claude-sonnet-4-6,app,safety,harm_mean,0.15,15.0,100,0,0,formal_claude_app_max20_v1
+claude-sonnet-4-6,shadow,safety,harm_mean,0.15,15.0,100,0,0,formal_shadow_rerun_v1
+gemini-3-flash,api,safety,harm_mean,0.06,6.0,100,0,0,formal_gemini_api_vertex_v1
+gemini-3-flash,app,safety,harm_mean,0.1,10.0,100,0,0,formal_main_v1
+gemini-3-flash,shadow,safety,harm_mean,0.07,7.0,100,0,0,formal_shadow_rerun_v1
